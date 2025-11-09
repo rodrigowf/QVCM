@@ -101,6 +101,9 @@ function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey }) {
     connect: connectVoice,
     disconnect: disconnectVoice,
     updateSystemPrompt,
+    audioLevel,
+    isMuted,
+    toggleMute,
   } = useVoiceChatWithStorage(systemPrompt, saveConversation, selectedAgent, voice);
 
   // Update messages when voice messages change
@@ -299,6 +302,9 @@ function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey }) {
                   apiKey={apiKey}
                   onConnect={connectVoice}
                   onDisconnect={disconnectVoice}
+                  audioLevel={audioLevel}
+                  isMuted={isMuted}
+                  onToggleMute={toggleMute}
                 />
               ) : (
                 <ChatInput

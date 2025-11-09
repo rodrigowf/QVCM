@@ -1,24 +1,24 @@
-# Quantum Holographic Consciousness Hypothesis (QHCH)
+# Quantum Vantage Consciousness Model (QVCM)
 
-**QHCH** (Quantum Holographic Consciousness Hypothesis) is a theoretical framework that bridges quantum mechanics, neuroscience, and the philosophy of mind to explain consciousness and perception. This repository contains the formal documentation of the QHCH theory and two demonstration applications – a dynamic website and an interactive chat interface – to help share and explore the hypothesis.
+**QVCM** (Quantum Vantage Consciousness Model) is a theoretical framework that bridges quantum mechanics, neuroscience, and the philosophy of mind to explain consciousness and perception. This repository contains the formal documentation of the QVCM theory and two demonstration applications – a dynamic website and an interactive chat interface – to help share and explore the hypothesis.
 
 ## Project Overview
 
-QHCH, formulated by **Rodrigo Werneck Franco**, posits that:  
-- **Perception is a quantum superposition** – the brain's state exists as a real quantum wavefunction (a "holographic" field of potential experiences) rather than a single classical state before observation.  
-- **Collapse corresponds to cognitive focus or decision** – when a particular experience or observation is made, it's analogous to a wavefunction collapse, selecting one facet of the superposed experience.  
-- **Entanglement underlies unified experience** – different regions or elements of the brain are **entangled**, allowing a unified conscious field and scaling of consciousness.  
+QVCM, formulated by **Rodrigo Werneck Franco**, posits that:  
+- **Perception→Decision loop** – a conscious moment is a quantum state that projects the world inside (perception) and intentionally reconfigures to guide action (decision). Both steps are fundamental.  
+- **Variable oneness and vantage components** – the same substrate can host multiple co-active centers of experience. An order parameter captures how unified or plural the moment feels.  
+- **Mesoscale coupling tunes consciousness** – oscillations, neuromodulators, and entanglement weights adjust which vantage components dominate, enabling unity, multiplicity, conflict, or merger.  
 *(These and other principles are detailed in the documentation.)*
 
-The goal of this project is to **share and demonstrate QHCH** in an accessible way. The dynamic website provides a readable format of the hypothesis with examples, and the chat application allows users to ask questions to an AI that is knowledgeable about QHCH from different perspectives.
+The goal of this project is to **share and demonstrate QVCM** in an accessible way. The dynamic website provides a readable format of the hypothesis with examples, and the chat application allows users to ask questions to an AI that is knowledgeable about QVCM from different perspectives.
 
 ## Repository Contents
 
-- **`QHCH.md`** – Main documentation of the Quantum Holographic Consciousness Hypothesis, including its axioms, mathematical formulation, and implications across ten sections. This is the core theory write-up.  
+- **`QVCM.md`** – Main documentation of the Quantum Vantage Consciousness Model, including its axioms, mathematical formulation, and implications across ten sections. This is the core theory write-up.  
 - **`chat/` directory** – Source code for the chat-based GPT application. This includes:  
-  - *Prompt files* (`QHCH_Specialist_prompt.txt`, `QHCH_sage_prompt.txt`, etc.) defining AI personas.  
-  - HTML/JS/CSS for the chat interface which allow users to interact with an AI about QHCH. Two modes are provided: **Specialist** (a PhD physicist/neurobiologist persona) and **Sage** (a mystic sage persona), both informed by the QHCH content.  
-- **`page/` directory** – Source code for the dynamic website presenting QHCH. Contains `index.html`, styling, and scripts that render the hypothesis content in a user-friendly way with interactive elements and navigation through the sections of the hypothesis.  
+  - *Prompt files* (`QVCM_Specialist_prompt.txt`, `QVCM_sage_prompt.txt`, etc.) defining AI personas.  
+  - HTML/JS/CSS for the chat interface which allow users to interact with an AI about QVCM. Two modes are provided: **Specialist** (a PhD physicist/neurobiologist persona) and **Sage** (a mystic sage persona), both informed by the QVCM content.  
+- **`page/` directory** – Source code for the dynamic website presenting QVCM. Contains `index.html`, styling, and scripts that render the hypothesis content in a user-friendly way with interactive elements and navigation through the sections of the hypothesis.  
 - **`server.js`** – A simple Node.js server that serves the files in `page/` and `chat/`. This allows you to run the website and chat application locally for demonstration.  
 
 ## Installation and Setup
@@ -53,26 +53,26 @@ The goal of this project is to **share and demonstrate QHCH** in an accessible w
    This will start a local server on port 5000 (or the port specified in your .env file).
 
 5. **Open the applications**:  
-   - For the **QHCH Website**, open your browser to: **`http://localhost:5000/`**  
-     – This will display the interactive/dynamic webpage explaining the QHCH theory. You can read through the sections of the hypothesis here in a formatted way.  
+   - For the **QVCM Website**, open your browser to: **`http://localhost:5000/`**  
+     – This will display the interactive/dynamic webpage explaining the QVCM theory. You can read through the sections of the hypothesis here in a formatted way.  
    - For the **Chat GPT Interface**, open: **`http://localhost:5000/`**  
-     – This loads the chat application. You can choose a persona (Specialist or Sage) and ask questions about QHCH. The AI will respond based on the content of the hypothesis.
+     – This loads the chat application. You can choose a persona (Specialist or Sage) and ask questions about QVCM. The AI will respond based on the content of the hypothesis.
 
 ## Usage Guide
 
-**QHCH Website (`page/index.html`):**  
-Navigate through the content which mirrors the QHCH.md document. The site includes multiple sections that match those outlined in the documentation. Use the on-page navigation or scroll to read the hypothesis. It's recommended to start from the introduction to understand the context and then proceed through each numbered section. 
+**QVCM Website (`page/index.html`):**  
+Navigate through the content which mirrors the QVCM.md document. The site includes multiple sections that match those outlined in the documentation. Use the on-page navigation or scroll to read the hypothesis. It's recommended to start from the introduction to understand the context and then proceed through each numbered section. 
 
 **Chat Application (`chat/index.html`):**  
 On loading the chat page, you'll be able to select which AI persona to engage with: 
-- **Specialist Persona** – an AI that behaves like a scientist deeply familiar with QHCH, capable of answering technical questions with academic rigor (grounded in physics/neuroscience terminology).  
-- **Sage Persona** – an AI that takes on a mystical/philosophical tone (inspired by hermetic and Hindu philosophies) to discuss QHCH in more spiritual or intuitive terms.  
+- **Specialist Persona** – an AI that behaves like a scientist deeply familiar with QVCM, capable of answering technical questions with academic rigor (grounded in physics/neuroscience terminology).  
+- **Sage Persona** – an AI that takes on a mystical/philosophical tone (inspired by hermetic and Hindu philosophies) to discuss QVCM in more spiritual or intuitive terms.  
 
-Type your question or prompt in the chat input and submit. The AI will generate a response drawing from the QHCH theory content. You can ask about clarifications of the theory, implications, or even hypothetical scenarios, and the AI will attempt to explain or elaborate from the perspective of QHCH.
+Type your question or prompt in the chat input and submit. The AI will generate a response drawing from the QVCM theory content. You can ask about clarifications of the theory, implications, or even hypothetical scenarios, and the AI will attempt to explain or elaborate from the perspective of QVCM.
 
 *Examples of questions to try:*  
-- "**What is the Quantum Holographic Consciousness Hypothesis in simple terms?**"  
-- "**How does wavefunction collapse relate to making a decision, according to QHCH?**"  
+- "**What is the Quantum Vantage Consciousness Model in simple terms?**"  
+- "**How does wavefunction collapse relate to making a decision, according to QVCM?**"  
 - "**What role does entanglement play in consciousness unity?**" (Specialist persona might reference neuroscience, Sage might reference spiritual unity)  
 
 **Note:** The chat application requires a valid OpenAI API key to function. If responses are not appearing, double-check that the key is correctly provided in your `.env` file.
@@ -80,7 +80,7 @@ Type your question or prompt in the chat input and submit. The AI will generate 
 ## Contributing
 
 Contributions to improve the theory or the applications are welcome. This can include:  
-- **Theory Discussion**: If you have insights, critiques, or expansions on QHCH, you can open an issue or a discussion. Since QHCH bridges multiple fields, constructive feedback or pointers to relevant research are very valuable.  
+- **Theory Discussion**: If you have insights, critiques, or expansions on QVCM, you can open an issue or a discussion. Since QVCM bridges multiple fields, constructive feedback or pointers to relevant research are very valuable.  
 - **Documentation**: Spot a typo or unclear explanation in the markdown docs? Feel free to submit a pull request with fixes or enhancements. Clearer examples or additional references that support the hypothesis are also welcome.  
 - **Code and Features**: You can improve the website's design, add interactive visualizations, or enhance the chat interface (for example, adding a UI toggle for personas, caching responses, or supporting more AI models). Please open an issue to discuss major changes before implementing, to ensure alignment with the project goals.  
 
@@ -92,17 +92,17 @@ This project is open-source under the **MIT License**. You are free to use, modi
 
 ## Acknowledgments
 
-- This theory builds upon ideas from quantum mechanics (e.g., superposition, entanglement), theories of consciousness (like Penrose-Hameroff's Orch-OR, the holographic brain principle), and philosophies of mind. The formulation of QHCH was inspired by bridging gaps between these disciplines.  
+- This theory builds upon ideas from quantum mechanics (e.g., superposition, entanglement), theories of consciousness (like Penrose-Hameroff's Orch-OR, the holographic brain principle), and philosophies of mind. The formulation of QVCM was inspired by bridging gaps between these disciplines.  
 - This was also large inspired and based upon Orch-OR theory by Stuart Hameroff and Sir Roger Penrose.
 - Thanks to anyone who engages with this project. Your interest and feedback help refine the hypothesis and its presentation.
 
 ## FAQ
 
-### How is QHCH different from other quantum consciousness theories?
-QHCH distinguishes itself by focusing on holographic perception as a fundamental property of consciousness, framing perception as a quantum superposition of possible experiences rather than a classical process. Unlike some quantum consciousness theories that focus primarily on neural correlates, QHCH provides a framework for understanding how unified consciousness emerges through quantum entanglement patterns.
+### How is QVCM different from other quantum consciousness theories?
+QVCM distinguishes itself by treating every conscious moment as a perception→decision loop whose oneness is variable. Instead of assuming a single self, it models co-active vantage components and tracks how coupling raises or lowers unity. This provides a bridge between quantum substrates, cognitive control, and measurable order parameters beyond traditional neural-correlate approaches.
 
-### What predictions or tests could validate QHCH?
-The hypothesis suggests several potentially testable predictions, including specific patterns of neural activity during perceptual decision-making that would align with quantum rather than classical probability distributions. It also suggests experiments to detect quantum coherence in neural systems under specific conditions of attentional focus.
+### What predictions or tests could validate QVCM?
+The model points to concrete tests: comparing Orch-OR reconfiguration times (τ ≈ ħ/E_G) with behavioral latencies, tracking how integration metrics rise as synchrony increases oneness, and identifying neural signatures of competing vantage components during conflict tasks. Closed-loop stimulation that merges components should measurably raise the oneness parameter and stabilize decisions.
 
 ### Is there empirical support for this hypothesis?
-While direct evidence is still emerging, QHCH aligns with several observations in cognitive neuroscience, including the binding problem (how disparate neural activities create unified perception), the non-local nature of consciousness, and certain anomalies in perceptual phenomena that challenge purely classical models. The hypothesis provides a framework for interpreting existing evidence and suggesting new experiments. 
+Direct evidence is still emerging, yet QVCM resonates with observations of fluctuating unity (e.g., dissociation, split attention) and the role of oscillatory coupling in coordinating behavior. It offers a quantitative lens for these phenomena and guides new experiments on multiplicity, mergers, and state-dependent memory. 
