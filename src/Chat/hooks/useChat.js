@@ -42,7 +42,7 @@ export const useChat = (apiKey, messages, setMessages, saveConversation, showSna
           'Authorization': `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: "o1",
+          model: "gpt-5",
           messages: chatMessages,
         }),
       });

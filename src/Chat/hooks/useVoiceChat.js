@@ -7,6 +7,7 @@ export function useVoiceChat(systemPrompt, voice = 'cove') {
     const [messages, setMessages] = useState([]);
     const [error, setError] = useState(null);
     const [audioLevel, setAudioLevel] = useState(0);
+    const [isMuted, setIsMuted] = useState(false);
     const webrtcRef = useRef(null);
     const audioContextRef = useRef(null);
     const analyserRef = useRef(null);
@@ -98,6 +99,8 @@ export function useVoiceChat(systemPrompt, voice = 'cove') {
             // Get media stream with proper error handling
             try {
                 mediaStreamRef.current = await navigator.mediaDevices.getUserMedia({ audio: true });
+                mediaStreamRef.current.getAudioTracks().forEach(track => { track.enabled = true; });
+                setIsMuted(false);
             } catch (mediaError) {
                 throw new Error(`Failed to access microphone: ${mediaError.message}`);
             }
@@ -130,6 +133,7 @@ export function useVoiceChat(systemPrompt, voice = 'cove') {
                 mediaStreamRef.current.getTracks().forEach(track => track.stop());
                 mediaStreamRef.current = null;
             }
+            setIsMuted(false);
         } catch (error) {
             setError(error.message);
             console.error('Failed to disconnect:', error);
@@ -168,6 +172,19 @@ export function useVoiceChat(systemPrompt, voice = 'cove') {
     //     }
     // }, [voice, isConnected]);
 
+    const toggleMute = useCallback(() => {
+        if (!mediaStreamRef.current) {
+            return;
+        }
+        setIsMuted((prevMuted) => {
+            const nextMuted = !prevMuted;
+            mediaStreamRef.current.getAudioTracks().forEach(track => {
+                track.enabled = !nextMuted;
+            });
+            return nextMuted;
+        });
+    }, []);
+
     const clearMessages = useCallback(() => {
         setMessages([]);
     }, []);
@@ -181,6 +198,8 @@ export function useVoiceChat(systemPrompt, voice = 'cove') {
         disconnect,
         updateSystemPrompt,
         clearMessages,
-        audioLevel
+        audioLevel,
+        isMuted,
+        toggleMute
     };
 } 
