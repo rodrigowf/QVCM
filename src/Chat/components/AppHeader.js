@@ -21,6 +21,7 @@ import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import ChatIcon from '@mui/icons-material/Chat';
+import TranslateIcon from '@mui/icons-material/Translate';
 import { availableAgents } from '../prompts';
 import { styled } from '@mui/material/styles';
 import { ControlsContainer, StyledFormControl } from '../styled/AppHeader.styled';
@@ -134,7 +135,22 @@ export const AppHeader = ({
                 </IconButton>
               </Tooltip>
             </>)}
-          {!isMobile && 
+          {isMobile && (
+            <>
+              <Tooltip title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}>
+                <IconButton color="inherit" onClick={toggleDarkMode}>
+                  {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+                </IconButton>
+              </Tooltip>
+              <Tooltip title={language === 'en' ? "Mudar para Português" : "Switch to English"}>
+                <IconButton color="inherit" onClick={toggleLanguage} sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                  <TranslateIcon sx={{ fontSize: 20 }} />
+                  <span style={{ fontSize: '12px', fontWeight: 'bold' }}>{language === 'en' ? 'EN' : 'BR'}</span>
+                </IconButton>
+              </Tooltip>
+            </>
+          )}
+          {!isMobile &&
             <SessionControls
               isDarkMode={isDarkMode}
               isMobile={isMobile}
