@@ -1,8 +1,22 @@
+import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import App from '../App';
 
-test('renders learn react link', () => {
+beforeEach(() => {
+  global.fetch = jest.fn(() =>
+    Promise.resolve({
+      ok: true,
+      text: () => Promise.resolve('# Quantum Vantage Consciousness Model')
+    })
+  );
+});
+
+afterEach(() => {
+  jest.resetAllMocks();
+});
+
+test('renders loading indicator on startup', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const loader = screen.getByRole('progressbar');
+  expect(loader).toBeInTheDocument();
 });

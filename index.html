@@ -12,40 +12,79 @@
     <script defer src="./assets/script.js"></script>
     <link href="./assets/style.css" rel="stylesheet" />
     
-    <title>QHCH Chat</title>
+    <title>QVCM Chat</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Explore the Quantum Holographic Consciousness Hypothesis (QHCH) – a theoretical framework bridging quantum mechanics, neuroscience, and philosophy of mind. Experience consciousness as a quantum superposition with real-time decision collapse and unified entanglement." />
-    <meta name="keywords" content="Quantum, Holographic, Consciousness, QHCH, neuroscience, quantum mechanics, superposition, collapse, entanglement, Orch-OR, many worlds, philosophy of mind" />
+    <meta name="description" content="Explore the Quantum Vantage Consciousness Model (QVCM) – a perception–decision framework where variable oneness links quantum substrates, unity, and multiplicity." />
+    <meta name="keywords" content="Quantum, Vantage, Consciousness, QVCM, neuroscience, perception, decision, oneness, Orch-OR, Many-Worlds, vantage components" />
     <meta name="author" content="Rodrigo Werneck Franco" />
-    <link rel="canonical" href="https://rodrigowf.github.io/QHCH/" />
+    <link id="meta-canonical" rel="canonical" href="https://rodrigowf.github.io/QVCM/" />
 
     <!-- Open Graph / Facebook tags -->
-    <meta property="og:title" content="Quantum Holographic Consciousness Hypothesis (QHCH)" />
-    <meta property="og:description" content="Discover QHCH – a unified theory of consciousness inspired by quantum mechanics, neuroscience, and philosophy of mind. Experience quantum superposition as the felt state and collapse as cognitive decision-making." />
+    <meta property="og:title" content="Quantum Vantage Consciousness Model (QVCM)" />
+    <meta property="og:description" content="Discover QVCM – a quantum vantage model uniting perception, decision, and variable oneness across neuroscience and physics." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://rodrigowf.github.io/QHCH/" />
-    <meta property="og:image" content="https://rodrigowf.github.io/QHCH/public/logo192.png" />
+    <meta id="meta-og-url" property="og:url" content="https://rodrigowf.github.io/QVCM/" />
+    <meta id="meta-og-image" property="og:image" content="https://rodrigowf.github.io/QVCM/public/logo192.png" />
 
     <!-- Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Quantum Holographic Consciousness Hypothesis (QHCH)" />
-    <meta name="twitter:description" content="Dive into QHCH—a theory that merges quantum physics and neuroscience to explain consciousness as a lived experience of quantum superposition and decision collapse." />
-    <meta name="twitter:image" content="https://rodrigowf.github.io/QHCH/public/logo512.png" />
+    <meta name="twitter:title" content="Quantum Vantage Consciousness Model (QVCM)" />
+    <meta name="twitter:description" content="Dive into QVCM—a model where quantum perception, intentional collapse, and variable oneness map conscious experience." />
+    <meta id="meta-twitter-image" name="twitter:image" content="https://rodrigowf.github.io/QVCM/public/logo512.png" />
 
     <!-- Structured Data: JSON-LD for search engines -->
-    <script type="application/ld+json">
+    <script id="ld-json-site" type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Quantum Holographic Consciousness Hypothesis (QHCH)",
-      "url": "https://rodrigowf.github.io/QHCH/",
-      "description": "A theoretical framework that bridges quantum mechanics, neuroscience, and philosophy of mind. QHCH posits that consciousness is experienced as a quantum superposition along with objective collapse decisions.",
+      "name": "Quantum Vantage Consciousness Model (QVCM)",
+      "url": "https://rodrigowf.github.io/QVCM/",
+      "description": "A theoretical framework that bridges quantum mechanics, neuroscience, and philosophy of mind. QVCM models conscious moments as quantum vantages executing perception–decision loops with variable oneness.",
       "author": {
         "@type": "Person",
         "name": "Rodrigo Werneck Franco"
       }
     }
+    </script>
+    <script>
+      (function updateSiteMetadata() {
+        const ensureTrailingSlash = (value) => (value.endsWith('/') ? value : `${value}/`);
+        const locationPath = window.location.pathname.replace(/index\.html?$/, '');
+        const canonicalUrl = ensureTrailingSlash(`${window.location.origin}${locationPath}`);
+
+        const canonicalLink = document.getElementById('meta-canonical');
+        if (canonicalLink) {
+          canonicalLink.href = canonicalUrl;
+        }
+
+        const ogUrl = document.getElementById('meta-og-url');
+        if (ogUrl) {
+          ogUrl.setAttribute('content', canonicalUrl);
+        }
+
+        const assetBase = `${canonicalUrl}public/`;
+        const ogImage = document.getElementById('meta-og-image');
+        if (ogImage) {
+          ogImage.setAttribute('content', `${assetBase}logo192.png`);
+        }
+
+        const twitterImage = document.getElementById('meta-twitter-image');
+        if (twitterImage) {
+          twitterImage.setAttribute('content', `${assetBase}logo512.png`);
+        }
+
+        const ldScript = document.getElementById('ld-json-site');
+        if (ldScript) {
+          try {
+            const ldData = JSON.parse(ldScript.textContent || '{}');
+            ldData.url = canonicalUrl;
+            ldScript.textContent = JSON.stringify(ldData);
+          } catch (error) {
+            console.warn('Unable to update JSON-LD metadata', error);
+          }
+        }
+      })();
     </script>
 </head>
 <body style="background: #161616">

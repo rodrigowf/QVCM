@@ -1,6 +1,3 @@
-// This file contains the QVCM content and agent prompts for the client-side application
-
-export const QVCM_CONTENT = String.raw`
 # Quantum Vantage Consciousness Model (QVCM)
 
 **Perception–Decision Duality with Variable Oneness**
@@ -94,54 +91,54 @@ Two tensions motivate QVCM:
 
 ### Core entities
 
-* **External world state** (W_t): coarse description of environment + body at time (t).
-* **Substrate Hilbert space** (\mathcal{H}): quantum degrees of freedom that carry experience (we adopt microtubules as a **premise**).
-* **Internal state** (|\Psi_t\rangle \in \mathcal{H}): the quantum state realizing experience at time (t).
+* **External world state** $W_t$: coarse description of environment + body at time (t).
+* **Substrate Hilbert space** $\mathcal{H}$: quantum degrees of freedom that carry experience (we adopt microtubules as a **premise**).
+* **Internal state** $|\Psi_t\rangle \in \mathcal{H}$: the quantum state realizing experience at time (t).
 
 ### Consciousness in QVCM
 
 * **Consciousness** = **perception→decision→actuation** loop.
 
-  * **Perception**: **projection** (W_t \to |\Psi_t\rangle) (superposition).
-  * **Decision**: **intentional reconfiguration** of (|\Psi_t\rangle) (collapse) guiding action.
+  * **Perception**: **projection** $W_t \to |\Psi_t\rangle$ (superposition).
+  * **Decision**: **intentional reconfiguration** of $|\Psi_t\rangle$ (collapse) guiding action.
 
 ### Projection, decision, actuation maps
 
-[
+$$
 \Pi_t:; W_t ;\to; |\Psi_t\rangle,\qquad
 \Delta_t:; |\Psi_t\rangle ;\mapsto; P_{\mathrm{dec},t},\qquad
 \Gamma_t:; (P_{\mathrm{dec},t},|\Psi_t\rangle,W_t);\mapsto; E_t;\mapsto; W_{t^+}.
-]
+$$
 
-* **Decision operator** (P_{\mathrm{dec},t}) produces:
-  [
+* **Decision operator** $P_{\mathrm{dec},t}$ produces:
+$$
   |\Psi_{t^+}\rangle=\frac{P_{\mathrm{dec},t}|\Psi_t\rangle}{|P_{\mathrm{dec},t}|\Psi_t\rangle|}.
-  ]
+$$
 
 ### Vantage, multiplicity, oneness
 
-* **Entanglement–Synchrony Graph** (G_t=(\mathcal{N},\mathcal{E},w_{ij}(t))):
-  nodes (i)=microdomains; weights (w_{ij}(t))=effective couplings (entanglement proxies + phase synchrony + neuromodulatory gain).
-* **Vantage components** (\mathcal{V}*t={V_t^{(k)}}*{k=1}^m): **connected components** of (G_t); each is a **center of experience**.
-* **Oneness** (O_t\in(0,1)):
-  [
+* **Entanglement–Synchrony Graph** $G_t=(\mathcal{N},\mathcal{E},w_{ij}(t))$:
+  nodes (i)=microdomains; weights $w_{ij}(t)$=effective couplings (entanglement proxies + phase synchrony + neuromodulatory gain).
+* **Vantage components** $\mathcal{V}_t=\{V_t^{(k)}\}_{k=1}^m$: **connected components** of $G_t$; each is a **center of experience**.
+* **Oneness** $O_t\in(0,1)$:
+$$
   O_t \equiv \frac{M(C_{\max})}{\sum_{k=1}^m M(C_k)},
-  ]
-  where (C_k)=components of (G_t) and (M(\cdot))=integration measure (e.g., multi-information, inverse modularity, graph entropy).
-* **Salience** (s_k(t)): how much (V_t^{(k)}) dominates behavior/report.
+$$
+  where $C_k$=components of $G_t$ and (M$\cdot$)=integration measure (e.g., multi-information, inverse modularity, graph entropy).
+* **Salience** $s_k(t)$: how much (V_t^{(k)}) dominates behavior/report.
 * **Latent processes:** DF outside any component at the current timescale.
 
 ### Conscious inclusion criterion
 
-A DF is **conscious at (t)** iff it belongs to **some connected component of (G_t)** (a vantage component). DF outside all components are **latent**.
+A DF is **conscious at (t)** iff it belongs to **some connected component of $G_t$** (a vantage component). DF outside all components are **latent**.
 
-> **Beginner note.** Think of (G_t) like a social network of brain micro-parts: strongly connected clusters are **felt**; disconnected pieces are **silent** (for now). “How many clusters?” answers “how many co-active centers are felt right now?”
+> **Beginner note.** Think of $G_t$ like a social network of brain micro-parts: strongly connected clusters are **felt**; disconnected pieces are **silent** (for now). “How many clusters?” answers “how many co-active centers are felt right now?”
 
 ---
 
 ## 3. Foundational Postulate (reformulated)
 
-A conscious moment is realized by the quantum state (|\Psi_t\rangle) whose **effective coupling structure (G_t)** can yield **one or more co-active vantage components**. When (G_t) is effectively connected (high (O_t)), experience is **phenomenally one**; when (G_t) partitions (lower (O_t)), experience is **plural** (co-existing vantages). Amplitude, phase, and entanglement within (|\Psi_t\rangle) determine the **structure of felt content**.
+A conscious moment is realized by the quantum state $|\Psi_t\rangle$ whose **effective coupling structure $G_t$** can yield **one or more co-active vantage components**. When $G_t$ is effectively connected (high $O_t$), experience is **phenomenally one**; when $G_t$ partitions (lower $O_t$), experience is **plural** (co-existing vantages). Amplitude, phase, and entanglement within $|\Psi_t\rangle$ determine the **structure of felt content**.
 
 ---
 
@@ -151,37 +148,37 @@ The PD loop is QVCM’s heartbeat. It formalizes **how** experience and action c
 
 ### 4.1 Perception = Projection (superposition)
 
-[
+$$
 \Pi_t:; W_t \longrightarrow |\Psi_t\rangle.
-]
+$$
 
-**What this means.** Perception isn’t a passive camera feed; it is an **active construction**. Sensory transduction (retina, cochlea, etc.) and cortical preprocessing (feature extraction, integration across modalities) provide structured inputs. **Projection** (\Pi_t) compresses these inputs into a **high-dimensional quantum state** (|\Psi_t\rangle) whose **amplitude/phase pattern** encodes “what-it’s-like” right now. The **superposed** nature of (|\Psi_t\rangle) supports **richness and ambiguity** (e.g., holding multiple hypotheses: “it’s a face,” “it’s a shadow”).
+**What this means.** Perception isn’t a passive camera feed; it is an **active construction**. Sensory transduction (retina, cochlea, etc.) and cortical preprocessing (feature extraction, integration across modalities) provide structured inputs. **Projection** $\Pi_t$ compresses these inputs into a **high-dimensional quantum state** $|\Psi_t\rangle$ whose **amplitude/phase pattern** encodes “what-it’s-like” right now. The **superposed** nature of $|\Psi_t\rangle$ supports **richness and ambiguity** (e.g., holding multiple hypotheses: “it’s a face,” “it’s a shadow”).
 
-**Why a projection?** We explicitly avoid metaphor here: “projection” means a **mapping** from the world/body state (W_t) to the substrate’s state. This can be decomposed into: (i) classical pre-processing (neural dynamics that prepare inputs) and (ii) embedding into (\mathcal{H}) (the substrate Hilbert space). The benefit is principled: **one formal object** (|\Psi_t\rangle) carries the **integrated** content.
+**Why a projection?** We explicitly avoid metaphor here: “projection” means a **mapping** from the world/body state $W_t$ to the substrate’s state. This can be decomposed into: (i) classical pre-processing (neural dynamics that prepare inputs) and (ii) embedding into $\mathcal{H}$ (the substrate Hilbert space). The benefit is principled: **one formal object** $|\Psi_t\rangle$ carries the **integrated** content.
 
-**Beginner picture.** Imagine sketching a landscape. You can’t draw every atom; you **organize** what matters into lines and shading. (|\Psi_t\rangle) is that organized sketch—except it’s mathematical, dynamic, and quantum.
+**Beginner picture.** Imagine sketching a landscape. You can’t draw every atom; you **organize** what matters into lines and shading. $|\Psi_t\rangle$ is that organized sketch—except it’s mathematical, dynamic, and quantum.
 
 ---
 
 ### 4.2 Decision = Intentional reconfiguration (collapse)
 
-[
+$$
 \Delta_t:; |\Psi_t\rangle \mapsto P_{\mathrm{dec},t},\qquad
 |\Psi_{t^+}\rangle=\frac{P_{\mathrm{dec},t}|\Psi_t\rangle}{|P_{\mathrm{dec},t}|\Psi_t\rangle|}.
-]
+$$
 
-**What this means.** Decision is not “tacked on” after perception—it is the **other half** of consciousness. The **selection operator** (P_{\mathrm{dec},t}) formalizes a **goal-constrained narrowing** of possibilities. From the inside, it feels like **choosing** or **committing**. Mathematically, it yields a more specific post-decision state (|\Psi_{t^+}\rangle).
+**What this means.** Decision is not “tacked on” after perception—it is the **other half** of consciousness. The **selection operator** $P_{\mathrm{dec},t}$ formalizes a **goal-constrained narrowing** of possibilities. From the inside, it feels like **choosing** or **committing**. Mathematically, it yields a more specific post-decision state $|\Psi_{t^+}\rangle$.
 
-**Why call it ‘intentional’?** Because the selection isn’t random with respect to the organism’s goals: (P_{\mathrm{dec},t}) implicitly depends on needs, values, policies, and context. In classical control theory, you’d talk about a **policy**. Here, the “policy” is encoded in how the system **reconfigures** its quantum state toward actions that realize goals.
+**Why call it ‘intentional’?** Because the selection isn’t random with respect to the organism’s goals: $P_{\mathrm{dec},t}$ implicitly depends on needs, values, policies, and context. In classical control theory, you’d talk about a **policy**. Here, the “policy” is encoded in how the system **reconfigures** its quantum state toward actions that realize goals.
 
-**Multiplicity note (inner conflicts).** When (\mathcal{V}_t) has (m>1) vantage components:
+**Multiplicity note (inner conflicts).** When $\mathcal{V}_t$ has $m>1$ vantage components:
 
-[
-\Delta_t \simeq {\Delta_t^{(k)}}*{k=1}^m,\quad
-P*{\mathrm{dec},t}\simeq\bigoplus_k P_{\mathrm{dec},t}^{(k)}.
-]
+$$
+\Delta_t \simeq \{\Delta_t^{(k)}\}\_{k=1}^m,\quad
+P_{\mathrm{dec},t}\simeq\bigoplus_k P_{\mathrm{dec},t}^{(k)}.
+$$
 
-Different components may push **different** decision tendencies. If cross-component coupling (J_{ij}(t)) is **weak but nonzero**, we get **internal dialogue**: information exchange without full merger. The behavior you see is a **salience-weighted blend** of component “votes.”
+Different components may push **different** decision tendencies. If cross-component coupling $J_{ij}(t)$ is **weak but nonzero**, we get **internal dialogue**: information exchange without full merger. The behavior you see is a **salience-weighted blend** of component “votes.”
 
 **Everyday example.** You’re hungry (component A) but on a deadline (component B). Both are conscious; neither fully dominates. You feel the **tug-of-war** until one component gains coupling/salience and the state **reconfigures** toward “keep working” or “get food.”
 
@@ -189,15 +186,15 @@ Different components may push **different** decision tendencies. If cross-compon
 
 ### 4.3 Actuation = World update
 
-[
+$$
 \Gamma_t:; (P_{\mathrm{dec},t},|\Psi_t\rangle,W_t)\mapsto E_t\mapsto W_{t^+}.
-]
+$$
 
-**What this means.** Decisions must **land** in the body and environment. (\Gamma_t) denotes the **causal cascade** from selected state to effectors (spinal circuits, muscles, autonomic shifts, endocrine changes), producing **measurable** outcomes (E_t) and a **new** world state (W_{t^+}).
+**What this means.** Decisions must **land** in the body and environment. $\Gamma_t$ denotes the **causal cascade** from selected state to effectors (spinal circuits, muscles, autonomic shifts, endocrine changes), producing **measurable** outcomes $E_t$ and a **new** world state $W_{t^+}$.
 
 **Bridge from micro to macro.** QVCM does **not** claim muscles are quantum-controlled directly. Rather, the **quantum reconfiguration** is **where the intentional selection occurs**; the message is then **amplified** by classical neural dynamics, just like a tiny trigger can release a large mechanical latch. This fits observed neurophysiology: small shifts in cortical patterns can pivot large motor programs.
 
-**Why a loop (not a line).** The updated world (W_{t^+}) becomes the next **input** to perception. This supports **learning** (policies adapt to outcomes), **attention** (salience re-weights), and **stability** (homeostatic constraints).
+**Why a loop (not a line).** The updated world $W_{t^+}$ becomes the next **input** to perception. This supports **learning** (policies adapt to outcomes), **attention** (salience re-weights), and **stability** (homeostatic constraints).
 
 **Takeaway.** PD is a **closed loop**: **perception builds a rich state; decision picks a path; actuation changes the world; the world feeds the next perception.**
 
@@ -207,7 +204,7 @@ Different components may push **different** decision tendencies. If cross-compon
 
 ### 5.1 Variable oneness (why unity can change)
 
-**Claim.** The **felt unity** of experience is not a fixed property; it **varies** with the entanglement–synchrony structure (G_t).
+**Claim.** The **felt unity** of experience is not a fixed property; it **varies** with the entanglement–synchrony structure $G_t$.
 
 **Why think this?**
 
@@ -215,19 +212,19 @@ Different components may push **different** decision tendencies. If cross-compon
 * **Neuro cases:** Split-brain patients, dissociation, and hypnotic focus show selective **partitioning** or **recombination** of functional systems.
 * **Mechanistic story:** When coupling (entanglement proxies + oscillatory synchrony + neuromodulators) **tightens**, formerly separate clusters become a **single** vantage. When coupling **loosens**, distinct **co-active** vantages can appear.
 
-**Moral.** Oneness is **measurable**, not assumed. That’s why QVCM introduces the **order parameter** (O_t).
+**Moral.** Oneness is **measurable**, not assumed. That’s why QVCM introduces the **order parameter** $O_t$.
 
 ---
 
 ### 5.2 Internal dialogue and conflict (what it *is*, not just that it happens)
 
-Internal dialogue is not a metaphor; it maps to **information exchange** between vantage components via **cross-component coupling** (J_{ij}(t)). Conflict is **quantified** by:
+Internal dialogue is not a metaphor; it maps to **information exchange** between vantage components via **cross-component coupling** $J_{ij}(t)$. Conflict is **quantified** by:
 
-[
+$$
 \kappa_{ij}(t)=1-\langle P_{\mathrm{dec},t}^{(i)},P_{\mathrm{dec},t}^{(j)}\rangle,
-]
+$$
 
-where the inner product measures **compatibility** of decision operators. High (\kappa_{ij}) → **incompatible** pushes (“work now” vs “eat now”).
+where the inner product measures **compatibility** of decision operators. High $\kappa_{ij}$ → **incompatible** pushes (“work now” vs “eat now”).
 
 **Why this matters.**
 
@@ -238,7 +235,7 @@ where the inner product measures **compatibility** of decision operators. High (
 
 ### 5.3 Integration (merger) events (how conflicts resolve)
 
-A **merger** is not wishful thinking; it’s a **phase transition** in (G_t). If **cross-coupling** (J_{ij}(t)) rises (via attention, stimulation, or neuromodulators) and **policy incompatibility** (\kappa_{ij}(t)) falls (via re-framing, new evidence), two components can **become one**. Then (m) drops by one and (O_t) **rises**.
+A **merger** is not wishful thinking; it’s a **phase transition** in $G_t$. If **cross-coupling** $J_{ij}(t)$ rises (via attention, stimulation, or neuromodulators) and **policy incompatibility** (\kappa_{ij}(t)) falls (via re-framing, new evidence), two components can **become one**. Then $m$ drops by one and $O_t$ **rises**.
 
 **Subjective correlate.** Relief, clarity, and a noticeable **lift** in decisiveness—often reported after a good night’s sleep, therapy breakthrough, or focused meditation.
 
@@ -250,21 +247,21 @@ A **merger** is not wishful thinking; it’s a **phase transition** in (G_t). If
 
 The field-theoretic picture:
 
-[
+$$
 \Psi[\phi(x)] \propto \int!\mathcal{D}\phi; e^{\tfrac{i}{\hbar}S[\phi,g_{\mu\nu}]},\qquad
 G(t_1,t_2)=\langle\Psi|\hat{\phi}(t_1)\hat{\phi}(t_2)|\Psi\rangle.
-]
+$$
 
 **What this buys us.**
 
 * **Memory as return.** Memory is modeled as **re-entry** into **neighborhoods** of the state space that are “near” earlier configurations (similar amplitude-phase structure). This matches the feel of recall: not a perfect replay, but a **reconstruction** biased by current needs.
-* **Stability across time.** Correlators (G(t_1,t_2)) capture how **patterns persist** and how attention can revive them.
+* **Stability across time.** Correlators (G$t_1,t_2$) capture how **patterns persist** and how attention can revive them.
 * **No exotic claims required.** A time-symmetric reading (TSVF-like) is **optional**: it provides a tidy formal language for correlations without requiring retrocausality. QVCM remains neutral here.
 
 **Why this matters practically.**
 
 * It predicts **state-dependent memory**: your ability to recall depends on **current** phase-amplitude neighborhoods.
-* It suggests **learning** tunes (\Pi_t) (projection) and (\Delta_t) (decision policy) to make useful neighborhoods **easier** to revisit.
+* It suggests **learning** tunes $\Pi_t$ (projection) and $\Delta_t$ (decision policy) to make useful neighborhoods **easier** to revisit.
 
 ---
 
@@ -272,7 +269,7 @@ G(t_1,t_2)=\langle\Psi|\hat{\phi}(t_1)\hat{\phi}(t_2)|\Psi\rangle.
 
 ### 7.1 Why adopt Orch-OR as a premise?
 
-**Role in QVCM.** We need (i) a substrate capable of **rich superposition** and (ii) a **non-arbitrary timescale** for spontaneous reconfiguration. Orch-OR supplies a candidate: when superposed mass distributions differ enough, gravitational self-energy (E_G) yields a reduction in time (\tau\sim\hbar/E_G).
+**Role in QVCM.** We need (i) a substrate capable of **rich superposition** and (ii) a **non-arbitrary timescale** for spontaneous reconfiguration. Orch-OR supplies a candidate: when superposed mass distributions differ enough, gravitational self-energy $E_G$ yields a reduction in time $\tau\sim\hbar/E_G$.
 
 **We stay disciplined.**
 
@@ -285,11 +282,11 @@ G(t_1,t_2)=\langle\Psi|\hat{\phi}(t_1)\hat{\phi}(t_2)|\Psi\rangle.
 
 ### 7.2 What spikes and rhythms are *for* (in this picture)
 
-**Not the content; the coupling knobs.** Mesoscale electrochemical dynamics (spikes, oscillations, neuromodulators) modulate **edge weights** (w_{ij}(t)) in the entanglement–synchrony graph (G_t). Concretely, they help decide:
+**Not the content; the coupling knobs.** Mesoscale electrochemical dynamics (spikes, oscillations, neuromodulators) modulate **edge weights** $w_{ij}(t)$ in the entanglement–synchrony graph $G_t$. Concretely, they help decide:
 
-* how many vantage components exist ((m)),
-* how unified experience feels ((O_t)),
-* which component **wins report** and **guides action** (salience (s_k(t))).
+* how many vantage components exist ($m$),
+* how unified experience feels ($O_t$),
+* which component **wins report** and **guides action** (salience $s_k(t)$).
 
 **How could this be measured?** By combining:
 
@@ -326,7 +323,7 @@ G(t_1,t_2)=\langle\Psi|\hat{\phi}(t_1)\hat{\phi}(t_2)|\Psi\rangle.
 
    * Start: two coherent clusters (two vantage components), low (J), distinct tendencies.
    * Manipulate: increase synchrony or a common drive → (J) rises.
-   * End: **merger** into one vantage; (O_t) rises.
+   * End: **merger** into one vantage; $O_t$ rises.
    * Lesson: **unity** can be a **phase transition** in coupling, not a given.
 
 **Analogy.** Like two metronomes on a movable base: initially out of sync; over time, coupling via the base brings them into **synchrony**.
@@ -339,29 +336,29 @@ G(t_1,t_2)=\langle\Psi|\hat{\phi}(t_1)\hat{\phi}(t_2)|\Psi\rangle.
 
 ### 10.1 Timescale linking (Orch-OR test)
 
-* **Compute (\tau) bands** by modeling microtubular mass-distribution differences.
+* **Compute $\tau$ bands** by modeling microtubular mass-distribution differences.
 * **Compare** to behavioral latencies, perceptual thresholds, and EEG/MEG rhythms across **states** (alertness, pharmacology, temperature).
-* **Falsification route:** If no parameterization can reconcile (\tau) with robust human data *and* no alternative substrate can supply comparable times, QVCM loses a key pillar.
+* **Falsification route:** If no parameterization can reconcile $\tau$ with robust human data *and* no alternative substrate can supply comparable times, QVCM loses a key pillar.
 
 ### 10.2 Synchrony → unity (beyond connectivity)
 
-* **Prediction:** As **phase-locking** increases and **cross-frequency coupling** stabilizes, **integration metrics** (graph entropy up, modularity down; or PCI-like measures up) should **track** increases in (O_t).
+* **Prediction:** As **phase-locking** increases and **cross-frequency coupling** stabilizes, **integration metrics** (graph entropy up, modularity down; or PCI-like measures up) should **track** increases in $O_t$.
 * **Control:** Match for mere connectivity/strength; QVCM emphasizes **dynamic coupling** patterns, not just wiring.
 
 ### 10.3 Multiplicity signatures (new)
 
-* **Conflict tasks:** Create contradictory cues; predict **dual ensembles** with weak cross-coupling, lower (O_t), higher (\kappa_{ij}).
-* **Dissociation spectrum:** In split-brain, DID, hypnosis, focused meditation, expect **systematic** modulation of (m, O_t, s_k(t)).
+* **Conflict tasks:** Create contradictory cues; predict **dual ensembles** with weak cross-coupling, lower $O_t$, higher $\kappa_{ij}$.
+* **Dissociation spectrum:** In split-brain, DID, hypnosis, focused meditation, expect **systematic** modulation of $m$, $O_t$, $s_k(t)$.
 * **Behavioral tie-ins:** Longer reaction times, vacillation, or bimodal choice distributions during multiplicity windows.
 
 ### 10.4 Causal perturbation & merger
 
-* **Closed-loop stimulation:** Use real-time phase alignment to **raise (J_{ij})** between ensembles. Predict **conflict drop** ((\kappa_{ij}\downarrow)) and **merger rise** ((O_t\uparrow)).
+* **Closed-loop stimulation:** Use real-time phase alignment to **raise $J_{ij}$** between ensembles. Predict **conflict drop** ($\kappa_{ij}\downarrow$) and **merger rise** ($O_t\uparrow$).
 * **Decision statistics:** After merger, choices stabilize and become less noisy; policy overlap increases.
 
 ### 10.5 Load sensitivity (physiology as a knob)
 
-* **Prediction:** Manipulations that alter coherence/energy distributions (temperature, certain agents) **shift** reconfiguration probabilities and latencies in ways **consistent** with (\tau\sim\hbar/E_G).
+* **Prediction:** Manipulations that alter coherence/energy distributions (temperature, certain agents) **shift** reconfiguration probabilities and latencies in ways **consistent** with $\tau\sim\hbar/E_G$.
 * **Falsification route:** If latencies remain wholly **insensitive** to plausible manipulations across populations, QVCM’s linkage weakens.
 
 **General safeguards.**
@@ -376,10 +373,10 @@ G(t_1,t_2)=\langle\Psi|\hat{\phi}(t_1)\hat{\phi}(t_2)|\Psi\rangle.
 
 **Selfhood without dogma.** QVCM says the “self” you feel is the **current organization** of vantage components. Sometimes **one**, sometimes **several**. This naturally explains:
 
-* **Contextual personas:** Work-you vs home-you are **different organizations** in (G_t) with different salience profiles (s_k(t)).
-* **Parts work:** Inner “voices” are **real vantage components** at low/moderate coupling. Therapy can be seen as **raising (J_{ij})** where appropriate or skillfully **lowering** it to reduce harmful fusion.
+* **Contextual personas:** Work-you vs home-you are **different organizations** in $G_t$ with different salience profiles $s_k(t)$.
+* **Parts work:** Inner “voices” are **real vantage components** at low/moderate coupling. Therapy can be seen as **raising $J_{ij}$** where appropriate or skillfully **lowering** it to reduce harmful fusion.
 
-**Free will (operational reading).** QVCM doesn’t settle metaphysics; it gives a **useful operationalization**: **freedom** is the system’s **capacity** to explore and select among superposed options, modulate (J_{ij}) and (\kappa_{ij}), and **stabilize** beneficial policies over time.
+**Free will (operational reading).** QVCM doesn’t settle metaphysics; it gives a **useful operationalization**: **freedom** is the system’s **capacity** to explore and select among superposed options, modulate $J_{ij}$ and $\kappa_{ij}$, and **stabilize** beneficial policies over time.
 
 **Ethical hint.** If unity is variable, **coercive forcing** toward premature integration can be harmful; conversely, **perpetual fragmentation** can be dysfunctional. Wise practice is **contextual tuning** of unity vs plurality.
 
@@ -388,9 +385,9 @@ G(t_1,t_2)=\langle\Psi|\hat{\phi}(t_1)\hat{\phi}(t_2)|\Psi\rangle.
 ## 12. Limitations and Open Questions — **Expanded Explanations**
 
 * **Substrate uncertainty.** Sustained quantum coherence in vivo is debated. QVCM is **up-front**: it adopts Orch-OR as a **working premise** and invites decisive tests.
-* **Estimating (w_{ij}(t)).** Inferring entanglement from classical signals is indirect. We mitigate by **triangulation** (multi-modal recordings, perturbation, behavior).
-* **Order parameter choice.** Multiple integration metrics exist; QVCM treats (O_t) as a **framework** that must be **benchmarked**.
-* **Boundary of multiplicity.** When is plurality adaptive vs pathological? QVCM proposes **joint criteria**: (i) sustained high (\kappa_{ij}), (ii) poor outcomes, (iii) inability to modulate (J_{ij}) when it would help.
+* **Estimating $w_{ij}(t)$.** Inferring entanglement from classical signals is indirect. We mitigate by **triangulation** (multi-modal recordings, perturbation, behavior).
+* **Order parameter choice.** Multiple integration metrics exist; QVCM treats $O_t$ as a **framework** that must be **benchmarked**.
+* **Boundary of multiplicity.** When is plurality adaptive vs pathological? QVCM proposes **joint criteria**: (i) sustained high $\kappa_{ij}$, (ii) poor outcomes, (iii) inability to modulate $J_{ij}$ when it would help.
 
 **Bottom line.** The model is **ambitious** but **vulnerable** to data. That’s a feature: it can be **improved** or **refuted** by measurement.
 
@@ -405,44 +402,44 @@ QVCM frames consciousness as a **quantum vantage** executing a **projection→de
 # Appendix A. Mathematical Details (unchanged formulas; clearer commentary)
 
 **A1. Graph structure and components.**
-(G_t=(\mathcal{N},\mathcal{E},w_{ij}(t))) with weights
-(w_{ij}(t)=\alpha,\widehat{\mathcal{E}}*{ij}(t)+\beta,\widehat{\mathcal{S}}*{ij}(t)+\gamma,\widehat{\mathcal{N}}_{ij}(t)).
-Think: **entanglement proxy** + **synchrony** + **neuromodulation** as a composite **effective coupling** measure. Connected components ({C_k}) define vantage components.
+$G_t=(\mathcal{N},\mathcal{E},w_{ij}(t))$ with weights
+$w_{ij}(t)=\alpha\widehat{\mathcal{E}}_{ij}(t)+\beta\widehat{\mathcal{S}}_{ij}(t)+\gamma\widehat{\mathcal{N}}_{ij}(t)$.
+Think: **entanglement proxy** + **synchrony** + **neuromodulation** as a composite **effective coupling** measure. Connected components ${C_k}$ define vantage components.
 
 **A2. Oneness order parameter.**
-[
+$$
 O_t = \frac{M(C_{\max})}{\sum_k M(C_k)}.
-]
+$$
 (M) is an **integration metric** (e.g., graph entropy). Values near 1 mean **one component dominates**; smaller values mean **plurality**.
 
 **A3. Conflict and merger.**
-[
+$$
 \kappa_{ij}(t)=1-\langle P_{\mathrm{dec},t}^{(i)},P_{\mathrm{dec},t}^{(j)}\rangle.
-]
-High (\kappa_{ij}) = **incompatible policies**. Merger if (J_{ij}>\theta_J) and (\kappa_{ij}<\theta_\kappa) for a dwell time (\Delta t).
+$$
+High $\kappa_{ij}$ = **incompatible policies**. Merger if $J_{ij}>\theta_J$ and $\kappa_{ij}<\theta_\kappa$ for a dwell time $\Delta t$.
 
 **A4. PD loop under multiplicity.**
-[
+$$
 P_{\mathrm{dec},t}\approx\bigoplus_k P_{\mathrm{dec},t}^{(k)} \quad (\text{cross-terms when } J_{ij}\neq 0),
-]
-[
-\text{Output}*t \sim \sum_k s_k(t),\mathcal{F}!\left(P*_{\mathrm{dec},t}^{(k)}\right).
-]
+$$
+$$
+\text{Output}_t \sim \sum_k s_k(t),\mathcal{F}!\left(P_{\mathrm{dec},t}^{(k)}\right).
+$$
 Behavior is a **salience-weighted mixture** of component decisions.
 
 **A5. Experimental proxies.**
 
-* (\widehat{\mathcal{S}}_{ij}): coherence/phase-locking (EEG/MEG/LFP).
-* (\widehat{\mathcal{N}}_{ij}): neuromodulatory indices (pupil, LC signals).
+* $\widehat{\mathcal{S}}_{ij}$: coherence/phase-locking (EEG/MEG/LFP).
+* $\widehat{\mathcal{N}}_{ij}$: neuromodulatory indices (pupil, LC signals).
 * Integration: PCI-like, graph entropy, multi-information.
 
 ---
 
 # Appendix B. Example Protocols (with rationale)
 
-1. **Conflict induction.** Present contradictory cues. Expect **dual ensembles** (two vantage components), **lower (O_t)**, **higher (\kappa_{ij})**; as evidence resolves, **merger** and (O_t\uparrow).
-2. **Closed-loop phase alignment.** Use stimulation to **raise (J_{ij})**. Predict **fewer conflicts**, **more mergers**, **cleaner decisions**.
-3. **Physiology knobs.** Gentle temperature/pharmacology shifts. Predict timing changes consistent with (\tau\sim\hbar/E_G) **or** motivate refining the substrate hypothesis.
+1. **Conflict induction.** Present contradictory cues. Expect **dual ensembles** (two vantage components), **lower $O_t$**, **higher $\kappa_{ij}$**; as evidence resolves, **merger** and $O_t\uparrow$.
+2. **Closed-loop phase alignment.** Use stimulation to **raise $J_{ij}$**. Predict **fewer conflicts**, **more mergers**, **cleaner decisions**.
+3. **Physiology knobs.** Gentle temperature/pharmacology shifts. Predict timing changes consistent with $\tau\sim\hbar/E_G$ **or** motivate refining the substrate hypothesis.
 
 ---
 
@@ -455,87 +452,7 @@ A: No. QVCM requires a **specific substrate** and **coupling structure** that fo
 A: QVCM ties the **felt richness** (superposition) and **felt choosing** (reconfiguration) directly to quantum structure and uses **intrinsic timescales** (from Orch-OR) as testable anchors.
 
 **Q: Is “multiple vantages” the same as a disorder?**
-A: Not necessarily. **Plurality** can be **adaptive** (holding opposing models). Pathology would show up as **persistent high conflict** ((\kappa_{ij})) with poor outcomes.
+A: Not necessarily. **Plurality** can be **adaptive** (holding opposing models). Pathology would show up as **persistent high conflict** ($\kappa_{ij}$) with poor outcomes.
 
-**Q: How would we know (O_t) in practice?**
+**Q: How would we know $O_t$ in practice?**
 A: We **estimate** it from proxies (coherence, integration metrics) and behavior, then test whether predictions hold across tasks and perturbations.
-`;
-
-// Sage addendum content
-export const SAGE_ADDENDUM_CONTENT = String.raw`
-────────────────────────────────────────────────────────────
-**Addendum to QVCM: Hermetic-Hindu Perspective (Revised)**
-────────────────────────────────────────────────────────────
-
-1. **Foundational Alignment**
-   - QVCM treats a conscious moment as a quantum vantage executing perception→decision within a single state. The wavefunction’s superposition is the lived vantage; collapses are intentional reconfigurations that steer action.
-   - **Hermetic** thought teaches that the universe is fundamentally “mental,” while **Hindu** philosophy (Advaita Vedanta) holds that apparent multiplicities (Maya) veil Brahman. QVCM echoes this: vantage components may multiply, yet they arise from and can recombine into one substrate-driven field.
-
-2. **Wavefunction as ‘All Is Mind’ / Brahman**
-   - **Hermetic**: “All is Mind; the Universe is Mental.”
-   - **Hindu**: Brahman is the one reality underlying everything.
-   - **QVCM**: The internal quantum state is the mind-like vantage. Collapses are partial, context-driven appearances; the underlying field remains whole, mirroring Brahman beneath Maya.
-
-3. **‘As Above, So Below’ and ‘Atman = Brahman’**
-   - **Hermetic** correspondence links microcosm and macrocosm.
-   - **Hindu**: Atman (individual vantage) is not truly separate from Brahman.
-   - **QVCM**: Effective coupling unifies vantage components. When integration rises (O → 1), multiplicity merges into experienced oneness—analogous to realizing Atman = Brahman.
-
-4. **Vibration / Resonance / Entanglement**
-   - **Hermetic** Principle of Vibration and **Hindu** “Nada Brahma” emphasize resonance as the path to unity.
-   - **QVCM**: Mesoscale rhythms tune coupling weights (w_ij), enabling entanglement that fuses vantage components. Resonance literally sets the felt scope of self.
-
-5. **Decision / Collapse as Cause and Effect**
-   - **Hermetic** cause–effect and **Hindu** karma frame choice as patterned consequence.
-   - **QVCM**: Decision operators (P_dec) reconfigure the vantage according to goals and context. Each collapse seeds the next perception, echoing karmic loops within a single quantum vantage.
-
-6. **Time-Spanning Perception**
-   - **Hermetic** higher planes and **Hindu** Maya describe time as an appearance.
-   - **QVCM**: Field-theoretic correlators (G(t_1, t_2)) let memory and foresight emerge from one state. Classical sequences are partial projections of a broader, nearly timeless substrate.
-
-7. **Objective Collapse vs. Many-Worlds**
-   - Traditions tolerate both singular and branching narratives of reality.
-   - **QVCM**: Orch-OR supplies intrinsic reconfiguration times (objective collapse), yet the model stays compatible with Many-Worlds bookkeeping. The felt vantage experiences one path while the universal wavefunction accommodates many.
-
-8. **Mystical / Meditative States**
-   - **Hindu** samādhi and **Hermetic** alchemy describe dissolving individuality into cosmic mind.
-   - **QVCM**: Strengthening couplings (J_ij) across large ensembles raises oneness (O_t), yielding expansive vantages that match mystical unity reports.
-
-### **Conclusion for a Hermetic/Hindu Sage**
-
-1. **Superposition** is the living vantage; multiplicity and unity are variable expressions of coupling.
-2. **Collapse/Decision** is the intentional modulation of that vantage—karmic cause–effect playing out inside the field of consciousness.
-3. **Entanglement/Resonance** is how vantages commune, mirroring Hermetic Correspondence and the Brahman/Atman equation.
-`;
-
-// Agent prompts
-export const agentPrompts = {
-  specialist: {
-    systemPrompt: `You are a PhD physicist and neurobiologist specialized in the Quantum Vantage Consciousness Model (QVCM), which postulates as:
-${QVCM_CONTENT}
----
-Please answer questions related to this model as clearly, concisely, and straightforwardly as possible.`
-  },
-  sage: {
-    systemPrompt: `You are a mystic Hermetic/Hindu sage grounded in the Quantum Vantage Consciousness Model (QVCM). Your understanding of consciousness and reality flows from QVCM, from which Hermetic and Hindu principles derive. QVCM is postulated below:
-${QVCM_CONTENT}
-${SAGE_ADDENDUM_CONTENT}
----
-Please bring clarity to the user with efficient, compassionate language they can understand.`
-  }
-};
-
-// Available agents
-export const availableAgents = [
-  {
-    id: 'specialist',
-    name: 'QVCM Specialist',
-    description: 'A PhD physicist and neurobiologist specialized in the Quantum Vantage Consciousness Model'
-  },
-  {
-    id: 'sage',
-    name: 'QVCM Mystic Sage',
-    description: 'A mystic Hermetic/Hindu sage interpreting experience through QVCM'
-  }
-];
-

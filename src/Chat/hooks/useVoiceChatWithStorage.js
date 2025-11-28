@@ -28,7 +28,10 @@ export function useVoiceChatWithStorage(systemPrompt, saveConversation, selected
     connect,
     disconnect,
     updateSystemPrompt,
-    clearMessages
+    clearMessages,
+    audioLevel,
+    isMuted,
+    toggleMute
   } = useVoiceChat(systemPrompt, voice);
 
   // Save messages to storage whenever they change
@@ -69,6 +72,9 @@ export function useVoiceChatWithStorage(systemPrompt, saveConversation, selected
     connect: handleConnect,
     disconnect,
     updateSystemPrompt,
-    clearMessages
+    clearMessages,
+    audioLevel,
+    isMuted,
+    toggleMute
   };
 } 

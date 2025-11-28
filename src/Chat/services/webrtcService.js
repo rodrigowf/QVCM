@@ -72,7 +72,7 @@ export class WebRTCService {
             await this.peerConnection.setLocalDescription(offer);
 
             // Send offer to OpenAI's Realtime API
-            const response = await fetch('https://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview-2024-12-17', {
+            const response = await fetch('https://api.openai.com/v1/realtime?model=gpt-realtime', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${apiKey}`,

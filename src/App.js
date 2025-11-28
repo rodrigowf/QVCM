@@ -132,7 +132,7 @@ const App = () => {
         }}
         aria-label="Open Chat"
       >
-        {!chatOpen ? <><ChatIcon sx={{mx: 1}}/>{!isMobile ? " Chat with QHCH" : ""}</> : <><CloseIcon sx={{mx: 1}}/>{!isMobile ? " Close Chat " : ""}</>}
+        {!chatOpen ? <><ChatIcon sx={{mx: 1}}/>{!isMobile ? " Chat with QVCM" : ""}</> : <><CloseIcon sx={{mx: 1}}/>{!isMobile ? " Close Chat " : ""}</>}
       </Button>
 
       {/* <LogRecorder /> */}

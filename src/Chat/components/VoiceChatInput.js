@@ -6,7 +6,9 @@ import {
   keyframes,
   styled,
   useTheme,
+  Tooltip,
 } from '@mui/material';
+import CallEndIcon from '@mui/icons-material/CallEnd';
 import MicIcon from '@mui/icons-material/Mic';
 import MicOffIcon from '@mui/icons-material/MicOff';
 import { ChatInputContainer } from '../styled/ChatInput.styled';
@@ -85,6 +87,34 @@ const VoiceButton = styled(IconButton)(({ theme, isConnected, isDarkMode }) => (
     : '0 4px 12px rgba(76, 103, 151, 0.3)',
 }));
 
+const ControlsRow = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  gap: theme.spacing(2),
+}));
+
+const MuteButton = styled(IconButton)(({ theme, isMuted, isDarkMode }) => ({
+  width: '56px',
+  height: '56px',
+  transition: 'all 0.3s ease',
+  background: isMuted
+    ? `linear-gradient(45deg, ${theme.palette.warning.dark}, ${theme.palette.warning.main})`
+    : `linear-gradient(45deg, ${isDarkMode ? theme.palette.primary.main : theme.palette.primary.light}, ${isDarkMode ? theme.palette.primary.dark : theme.palette.primary.main})`,
+  color: '#fff',
+  '&:hover': {
+    background: isMuted
+      ? `linear-gradient(45deg, ${theme.palette.warning.main}, ${theme.palette.warning.dark})`
+      : `linear-gradient(45deg, ${isDarkMode ? theme.palette.primary.dark : theme.palette.primary.main}, ${isDarkMode ? theme.palette.primary.main : theme.palette.primary.dark})`,
+    transform: 'scale(1.05)',
+  },
+  '&:disabled': {
+    backgroundColor: isDarkMode ? '#404040' : '#e0e0e0',
+  },
+  boxShadow: isDarkMode
+    ? '0 4px 12px rgba(118, 182, 253, 0.25)'
+    : '0 4px 12px rgba(76, 103, 151, 0.25)',
+}));
+
 export const VoiceChatInput = ({
   isDarkMode,
   isConnected,
@@ -94,6 +124,8 @@ export const VoiceChatInput = ({
   onConnect,
   onDisconnect,
   audioLevel = 0,
+  isMuted = false,
+  onToggleMute = () => {},
 }) => {
   const theme = useTheme();
 
@@ -112,28 +144,46 @@ export const VoiceChatInput = ({
   return (
     <ChatInputContainer isDarkMode={isDarkMode} theme={theme}>
       <CenterContainer>
-        <VoiceButtonContainer>
-          {isConnected && isSpeaking && (
-            <>
-              <InputLevelRing isDarkMode={isDarkMode} audioLevel={audioLevel} />
-              <GlowRing isDarkMode={isDarkMode} />
-            </>
-          )}
-          <VoiceButton
-            isConnected={isConnected}
-            isDarkMode={isDarkMode}
-            onClick={handleToggleConnection}
-            disabled={!apiKey || loading}
-          >
-            {loading ? (
-              <CircularProgress size={28} color="inherit" />
-            ) : isConnected ? (
-              <MicOffIcon fontSize="large" />
-            ) : (
-              <MicIcon fontSize="large" />
+        <ControlsRow>
+          <VoiceButtonContainer>
+            {isConnected && isSpeaking && !isMuted && (
+              <>
+                <InputLevelRing isDarkMode={isDarkMode} audioLevel={audioLevel} />
+                <GlowRing isDarkMode={isDarkMode} />
+              </>
             )}
-          </VoiceButton>
-        </VoiceButtonContainer>
+            <VoiceButton
+              isConnected={isConnected}
+              isDarkMode={isDarkMode}
+              onClick={handleToggleConnection}
+              disabled={!apiKey || loading}
+            >
+              {loading ? (
+                <CircularProgress size={28} color="inherit" />
+              ) : isConnected ? (
+                <CallEndIcon fontSize="large" />
+              ) : (
+                <MicIcon fontSize="large" />
+              )}
+            </VoiceButton>
+          </VoiceButtonContainer>
+          {isConnected && (
+            <Tooltip title={isMuted ? "Unmute microphone" : "Mute microphone"}>
+              <MuteButton
+                isDarkMode={isDarkMode}
+                isMuted={isMuted}
+                onClick={onToggleMute}
+                disabled={!apiKey || loading}
+              >
+                {isMuted ? (
+                  <MicOffIcon fontSize="medium" />
+                ) : (
+                  <MicIcon fontSize="medium" />
+                )}
+              </MuteButton>
+            </Tooltip>
+          )}
+        </ControlsRow>
       </CenterContainer>
     </ChatInputContainer>
   );
