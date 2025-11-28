@@ -8,7 +8,7 @@ import AppHeader from './components/Header';
 import TOC from './components/TOC';
 import AppFooter from './components/AppFooter';
 
-const ContentPage = ({ isDarkMode, toggleDarkMode, isMobile }) => {
+const ContentPage = ({ isDarkMode, toggleDarkMode, isMobile, language, toggleLanguage }) => {
   const { htmlContent, toc, loading } = useMarkdown();
   const [ isTocVisible, setIsTocVisible ] = useState(!isMobile);
   const contentRef = useRef(null);
@@ -40,12 +40,14 @@ const ContentPage = ({ isDarkMode, toggleDarkMode, isMobile }) => {
     <div className={isDarkMode ? 'dark-mode' : ''}>
       <GlobalStyle />
       <Container isTocVisible={isTocVisible} isMobile={isMobile}>
-        <AppHeader 
-          isDarkMode={isDarkMode} 
-          toggleDarkMode={toggleDarkMode} 
-          isMobile={isMobile} 
-          isTocVisible={isTocVisible} 
-          toggleTOCVisible={toggleTOCVisible} 
+        <AppHeader
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+          isMobile={isMobile}
+          isTocVisible={isTocVisible}
+          toggleTOCVisible={toggleTOCVisible}
+          language={language}
+          toggleLanguage={toggleLanguage}
         />
         {isTocVisible && (
           <TOC toc={toc} isMobile={isMobile} />

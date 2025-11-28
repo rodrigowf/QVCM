@@ -81,6 +81,8 @@ export const AppHeader = ({
   toggleAutoPlay,
   isVoiceMode,
   toggleVoiceMode,
+  language,
+  toggleLanguage,
 }) => {
   const theme = useTheme();
 
@@ -133,7 +135,7 @@ export const AppHeader = ({
               </Tooltip>
             </>)}
           {!isMobile && 
-            <SessionControls 
+            <SessionControls
               isDarkMode={isDarkMode}
               isMobile={isMobile}
               theme={theme}
@@ -143,6 +145,8 @@ export const AppHeader = ({
               getCurrentAgent={getCurrentAgent}
               handleChangeApiKey={handleChangeApiKey}
               toggleDarkMode={toggleDarkMode}
+              language={language}
+              toggleLanguage={toggleLanguage}
             />
           }
         </Box>

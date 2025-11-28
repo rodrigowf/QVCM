@@ -25,7 +25,7 @@ import { agentPrompts } from './prompts';
 
 const VOICE_MODE_STORAGE_KEY = 'qhch_voice_mode';
 
-function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey }) {
+function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey, language, toggleLanguage }) {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('success');
@@ -219,6 +219,8 @@ function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey }) {
           toggleAutoPlay={toggleAutoPlay}
           isVoiceMode={isVoiceMode}
           toggleVoiceMode={toggleVoiceMode}
+          language={language}
+          toggleLanguage={toggleLanguage}
         />
 
         <Box
