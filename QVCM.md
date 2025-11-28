@@ -42,7 +42,7 @@ A conscious moment is a **quantum state** that (a) **projects** the world inside
 
 ---
 
-## Glossary (quick, beginner-friendly)
+## Glossary 
 
 * **Vantage:** the inside view—the felt point of experience.
 * **Vantage component:** one **center of experience** at a moment; there can be one or many simultaneously.
@@ -59,7 +59,7 @@ A conscious moment is a **quantum state** that (a) **projects** the world inside
 
 ---
 
-## Background Primer: Quantum Bits You Need (no heavy math)
+## Background Primer: Quantum Bits You Need 
 
 * **Quantum states** can be **superposed**: like a chord holding multiple notes at once.
 * **Measurement** (or a collapse mechanism) makes the state **more specific**—like picking one note to play forward.
@@ -75,7 +75,7 @@ A conscious moment is a **quantum state** that (a) **projects** the world inside
 
 ---
 
-# The Full Model (with beginner notes)
+# The Full Model
 
 ## 1. Motivation and Scope
 
@@ -87,7 +87,7 @@ Two tensions motivate QVCM:
 
 ---
 
-## 2. Definitions & Notation (complete and unambiguous)
+## 2. Definitions & Notation 
 
 ### Core entities
 
@@ -128,7 +128,7 @@ A DF is **conscious at $t$** iff it belongs to **some connected component of $G_
 
 ---
 
-## 3. Foundational Postulate (reformulated)
+## 3. Foundational Postulate 
 
 A conscious moment is realized by the quantum state $|\Psi_t\rangle$ whose **effective coupling structure $G_t$** can yield **one or more co-active vantage components**. When $G_t$ is effectively connected (high $O_t$), experience is **phenomenally one**; when $G_t$ partitions (lower $O_t$), experience is **plural** (co-existing vantages). Amplitude, phase, and entanglement within $|\Psi_t\rangle$ determine the **structure of felt content**.
 
@@ -182,7 +182,7 @@ $$\Gamma_t: (P_{\mathrm{dec},t},|\Psi_t\rangle,W_t) \mapsto E_t \mapsto W_{t^+}$
 
 ---
 
-## 5. Unity, Multiplicity, and Internal Dialogue — **Expanded Explanations**
+## 5. Unity, Multiplicity, and Internal Dialogue 
 
 ### 5.1 Variable oneness (why unity can change)
 
@@ -223,7 +223,7 @@ A **merger** is not wishful thinking; it's a **phase transition** in $G_t$. If *
 
 ---
 
-## 6. Temporal Structure and Memory — **Expanded Explanations**
+## 6. Temporal Structure and Memory 
 
 The field-theoretic picture:
 
@@ -242,7 +242,7 @@ $$\Psi[\phi(x)] \propto \int\!\mathcal{D}\phi\; e^{\tfrac{i}{\hbar}S[\phi,g_{\mu
 
 ---
 
-## 7. Biological Premise: Orch-OR (and what spikes are for) — **Expanded Explanations**
+## 7. Biological Premise: Orch-OR (and what spikes are for) 
 
 ### 7.1 Why adopt Orch-OR as a premise?
 
@@ -275,7 +275,7 @@ $$\Psi[\phi(x)] \propto \int\!\mathcal{D}\phi\; e^{\tfrac{i}{\hbar}S[\phi,g_{\mu
 
 ---
 
-## 8. Many-Worlds Compatibility — **Expanded Explanations**
+## 8. Many-Worlds Compatibility 
 
 **Outside vs inside.** Many-Worlds (Everett) says the global wavefunction **never collapses**, it **branches**. QVCM says **from the inside** each vantage feels a **single** reconfiguration (a "collapse")—which is exactly what a branch **looks like** to an embedded observer.
 
@@ -288,7 +288,7 @@ $$\Psi[\phi(x)] \propto \int\!\mathcal{D}\phi\; e^{\tfrac{i}{\hbar}S[\phi,g_{\mu
 
 ---
 
-## 9. Minimal Didactic Examples — **Expanded Explanations**
+## 9. Minimal Didactic Examples 
 
 1. **Single particle $\Psi(x)$.**
 
@@ -307,7 +307,7 @@ $$\Psi[\phi(x)] \propto \int\!\mathcal{D}\phi\; e^{\tfrac{i}{\hbar}S[\phi,g_{\mu
 
 ---
 
-## 10. Empirical Program and Predictions — **Expanded Explanations**
+## 10. Empirical Program and Predictions 
 
 **Guiding idea.** We want **clear wins or losses** for QVCM. The following are **practical paths** to validation or falsification.
 
@@ -322,7 +322,7 @@ $$\Psi[\phi(x)] \propto \int\!\mathcal{D}\phi\; e^{\tfrac{i}{\hbar}S[\phi,g_{\mu
 * **Prediction:** As **phase-locking** increases and **cross-frequency coupling** stabilizes, **integration metrics** (graph entropy up, modularity down; or PCI-like measures up) should **track** increases in $O_t$.
 * **Control:** Match for mere connectivity/strength; QVCM emphasizes **dynamic coupling** patterns, not just wiring.
 
-### 10.3 Multiplicity signatures (new)
+### 10.3 Multiplicity signatures 
 
 * **Conflict tasks:** Create contradictory cues; predict **dual ensembles** with weak cross-coupling, lower $O_t$, higher $\kappa_{ij}$.
 * **Dissociation spectrum:** In split-brain, DID, hypnosis, focused meditation, expect **systematic** modulation of $m, O_t, s_k(t)$.
@@ -346,7 +346,7 @@ $$\Psi[\phi(x)] \propto \int\!\mathcal{D}\phi\; e^{\tfrac{i}{\hbar}S[\phi,g_{\mu
 
 ---
 
-## 11. Philosophy & Psychology Bridge — **Expanded Explanations**
+## 11. Philosophy & Psychology Bridge 
 
 **Selfhood without dogma.** QVCM says the "self" you feel is the **current organization** of vantage components. Sometimes **one**, sometimes **several**. This naturally explains:
 
@@ -359,7 +359,7 @@ $$\Psi[\phi(x)] \propto \int\!\mathcal{D}\phi\; e^{\tfrac{i}{\hbar}S[\phi,g_{\mu
 
 ---
 
-## 12. Limitations and Open Questions — **Expanded Explanations**
+## 12. Limitations and Open Questions 
 
 * **Substrate uncertainty.** Sustained quantum coherence in vivo is debated. QVCM is **up-front**: it adopts Orch-OR as a **working premise** and invites decisive tests.
 * **Estimating $w_{ij}(t)$.** Inferring entanglement from classical signals is indirect. We mitigate by **triangulation** (multi-modal recordings, perturbation, behavior).
@@ -376,7 +376,7 @@ QVCM frames consciousness as a **quantum vantage** executing a **projection→de
 
 ---
 
-# Appendix A. Mathematical Details (unchanged formulas; clearer commentary)
+# Appendix A. Mathematical Details 
 
 **A1. Graph structure and components.**
 $G_t=(\mathcal{N},\mathcal{E},w_{ij}(t))$ with weights
@@ -413,7 +413,7 @@ Behavior is a **salience-weighted mixture** of component decisions.
 
 ---
 
-# FAQ (for curious beginners)
+# FAQ 
 
 **Q: Does QVCM say everything is conscious?**
 A: No. QVCM requires a **specific substrate** and **coupling structure** that forms vantage components. No component, no vantage.
