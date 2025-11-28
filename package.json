@@ -47,5 +47,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://rodrigowf.github.io/QHCH"
+  "proxy": "https://rodrigowf.github.io/QHCH",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0"
+  }
 }

@@ -28,4 +28,7 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
-*.swo 
+*.swo
+
+# Test results
+test-results/
