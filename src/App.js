@@ -9,11 +9,13 @@ import LogRecorder from './LogRecorder';
 
 const DARK_MODE_STORAGE_KEY = 'qhch_dark_mode';
 const CHAT_OPEN_STORAGE_KEY = 'qhch_chat_open';
+const LANGUAGE_STORAGE_KEY = 'qhch_language';
 
 
 const App = () => {
   const [chatOpen, setChatOpen] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(null);
+  const [language, setLanguage] = useState('en'); // 'en' or 'pt-BR'
   const isMobile = useMediaQuery('(max-width:600px)');
   
   const queryParams = new URLSearchParams(window.location.search);
@@ -58,6 +60,19 @@ const App = () => {
     localStorage.setItem(DARK_MODE_STORAGE_KEY, newMode.toString());
   };
 
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    if (storedLanguage) {
+      setLanguage(storedLanguage);
+    }
+  }, []);
+
+  const toggleLanguage = () => {
+    const newLanguage = language === 'en' ? 'pt-BR' : 'en';
+    setLanguage(newLanguage);
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, newLanguage);
+  };
+
   const toggleChat = () => {
     setChatOpen(prevState => !prevState);
   };
@@ -88,7 +103,7 @@ const App = () => {
   return (
     <Box sx={{ position: 'relative' }}>
       {(chatOpen === false) ? (
-        <ContentPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} isMobile={isMobile}/>
+        <ContentPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} isMobile={isMobile} language={language} toggleLanguage={toggleLanguage}/>
       ) : (
         <Box
           sx={{
@@ -108,7 +123,7 @@ const App = () => {
         >
           {/* Chat App Component */}
           <Box sx={{ flexGrow: 1, overflow: 'hidden' }}>
-            <Chat isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} isMobile={isMobile} initialApiKey={initialApiKey}/>
+            <Chat isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} isMobile={isMobile} initialApiKey={initialApiKey} language={language} toggleLanguage={toggleLanguage}/>
           </Box>
 
         </Box>
