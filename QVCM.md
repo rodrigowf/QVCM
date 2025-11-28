@@ -104,16 +104,10 @@ Two tensions motivate QVCM:
 
 ### Projection, decision, actuation maps
 
-$$
-\Pi_t: W_t \to |\Psi_t\rangle,\qquad
-\Delta_t: |\Psi_t\rangle \mapsto P_{\mathrm{dec},t},\qquad
-\Gamma_t: (P_{\mathrm{dec},t},|\Psi_t\rangle,W_t) \mapsto E_t \mapsto W_{t^+}.
-$$
+$$\Pi_t: W_t \to |\Psi_t\rangle,\qquad \Delta_t: |\Psi_t\rangle \mapsto P_{\mathrm{dec},t},\qquad \Gamma_t: (P_{\mathrm{dec},t},|\Psi_t\rangle,W_t) \mapsto E_t \mapsto W_{t^+}.$$
 
 * **Decision operator** $P_{\mathrm{dec},t}$ produces:
-  $$
-  |\Psi_{t^+}\rangle=\frac{P_{\mathrm{dec},t}|\Psi_t\rangle}{\|P_{\mathrm{dec},t}|\Psi_t\rangle\|}.
-  $$
+  $$|\Psi_{t^+}\rangle=\frac{P_{\mathrm{dec},t}|\Psi_t\rangle}{\|P_{\mathrm{dec},t}|\Psi_t\rangle\|}$$
 
 ### Vantage, multiplicity, oneness
 
@@ -121,9 +115,7 @@ $$
   nodes $i$=microdomains; weights $w_{ij}(t)$=effective couplings (entanglement proxies + phase synchrony + neuromodulatory gain).
 * **Vantage components** $\mathcal{V}_t=\{V_t^{(k)}\}_{k=1}^m$: **connected components** of $G_t$; each is a **center of experience**.
 * **Oneness** $O_t\in(0,1)$:
-  $$
-  O_t \equiv \frac{M(C_{\max})}{\sum_{k=1}^m M(C_k)},
-  $$
+  $$O_t \equiv \frac{M(C_{\max})}{\sum_{k=1}^m M(C_k)},$$
   where $C_k$=components of $G_t$ and $M(\cdot)$=integration measure (e.g., multi-information, inverse modularity, graph entropy).
 * **Salience** $s_k(t)$: how much $V_t^{(k)}$ dominates behavior/report.
 * **Latent processes:** DF outside any component at the current timescale.
@@ -148,9 +140,7 @@ The PD loop is QVCM's heartbeat. It formalizes **how** experience and action con
 
 ### 4.1 Perception = Projection (superposition)
 
-$$
-\Pi_t: W_t \longrightarrow |\Psi_t\rangle.
-$$
+$$\Pi_t: W_t \longrightarrow |\Psi_t\rangle$$
 
 **What this means.** Perception isn't a passive camera feed; it is an **active construction**. Sensory transduction (retina, cochlea, etc.) and cortical preprocessing (feature extraction, integration across modalities) provide structured inputs. **Projection** $\Pi_t$ compresses these inputs into a **high-dimensional quantum state** $|\Psi_t\rangle$ whose **amplitude/phase pattern** encodes "what-it's-like" right now. The **superposed** nature of $|\Psi_t\rangle$ supports **richness and ambiguity** (e.g., holding multiple hypotheses: "it's a face," "it's a shadow").
 
@@ -162,10 +152,7 @@ $$
 
 ### 4.2 Decision = Intentional reconfiguration (collapse)
 
-$$
-\Delta_t: |\Psi_t\rangle \mapsto P_{\mathrm{dec},t},\qquad
-|\Psi_{t^+}\rangle=\frac{P_{\mathrm{dec},t}|\Psi_t\rangle}{\|P_{\mathrm{dec},t}|\Psi_t\rangle\|}.
-$$
+$$\Delta_t: |\Psi_t\rangle \mapsto P_{\mathrm{dec},t},\qquad |\Psi_{t^+}\rangle=\frac{P_{\mathrm{dec},t}|\Psi_t\rangle}{\|P_{\mathrm{dec},t}|\Psi_t\rangle\|}$$
 
 **What this means.** Decision is not "tacked on" after perception—it is the **other half** of consciousness. The **selection operator** $P_{\mathrm{dec},t}$ formalizes a **goal-constrained narrowing** of possibilities. From the inside, it feels like **choosing** or **committing**. Mathematically, it yields a more specific post-decision state $|\Psi_{t^+}\rangle$.
 
@@ -173,10 +160,7 @@ $$
 
 **Multiplicity note (inner conflicts).** When $\mathcal{V}_t$ has $m>1$ vantage components:
 
-$$
-\Delta_t \simeq \{\Delta_t^{(k)}\}_{k=1}^m,\quad
-P_{\mathrm{dec},t}\simeq\bigoplus_k P_{\mathrm{dec},t}^{(k)}.
-$$
+$$\Delta_t \simeq \{\Delta_t^{(k)}\}_{k=1}^m,\quad P_{\mathrm{dec},t}\simeq\bigoplus_k P_{\mathrm{dec},t}^{(k)}$$
 
 Different components may push **different** decision tendencies. If cross-component coupling $J_{ij}(t)$ is **weak but nonzero**, we get **internal dialogue**: information exchange without full merger. The behavior you see is a **salience-weighted blend** of component "votes."
 
@@ -186,9 +170,7 @@ Different components may push **different** decision tendencies. If cross-compon
 
 ### 4.3 Actuation = World update
 
-$$
-\Gamma_t: (P_{\mathrm{dec},t},|\Psi_t\rangle,W_t) \mapsto E_t \mapsto W_{t^+}.
-$$
+$$\Gamma_t: (P_{\mathrm{dec},t},|\Psi_t\rangle,W_t) \mapsto E_t \mapsto W_{t^+}$$
 
 **What this means.** Decisions must **land** in the body and environment. $\Gamma_t$ denotes the **causal cascade** from selected state to effectors (spinal circuits, muscles, autonomic shifts, endocrine changes), producing **measurable** outcomes $E_t$ and a **new** world state $W_{t^+}$.
 
@@ -220,9 +202,7 @@ $$
 
 Internal dialogue is not a metaphor; it maps to **information exchange** between vantage components via **cross-component coupling** $J_{ij}(t)$. Conflict is **quantified** by:
 
-$$
-\kappa_{ij}(t)=1-\langle P_{\mathrm{dec},t}^{(i)},P_{\mathrm{dec},t}^{(j)}\rangle,
-$$
+$$\kappa_{ij}(t)=1-\langle P_{\mathrm{dec},t}^{(i)},P_{\mathrm{dec},t}^{(j)}\rangle$$
 
 where the inner product measures **compatibility** of decision operators. High $\kappa_{ij}$ → **incompatible** pushes ("work now" vs "eat now").
 
@@ -247,10 +227,7 @@ A **merger** is not wishful thinking; it's a **phase transition** in $G_t$. If *
 
 The field-theoretic picture:
 
-$$
-\Psi[\phi(x)] \propto \int\!\mathcal{D}\phi\; e^{\tfrac{i}{\hbar}S[\phi,g_{\mu\nu}]},\qquad
-G(t_1,t_2)=\langle\Psi|\hat{\phi}(t_1)\hat{\phi}(t_2)|\Psi\rangle.
-$$
+$$\Psi[\phi(x)] \propto \int\!\mathcal{D}\phi\; e^{\tfrac{i}{\hbar}S[\phi,g_{\mu\nu}]},\qquad G(t_1,t_2)=\langle\Psi|\hat{\phi}(t_1)\hat{\phi}(t_2)|\Psi\rangle$$
 
 **What this buys us.**
 
@@ -407,24 +384,17 @@ $w_{ij}(t)=\alpha\,\widehat{\mathcal{E}}_{ij}(t)+\beta\,\widehat{\mathcal{S}}_{i
 Think: **entanglement proxy** + **synchrony** + **neuromodulation** as a composite **effective coupling** measure. Connected components $\{C_k\}$ define vantage components.
 
 **A2. Oneness order parameter.**
-$$
-O_t = \frac{M(C_{\max})}{\sum_k M(C_k)}.
-$$
+$$O_t = \frac{M(C_{\max})}{\sum_k M(C_k)}$$
 $M$ is an **integration metric** (e.g., graph entropy). Values near 1 mean **one component dominates**; smaller values mean **plurality**.
 
 **A3. Conflict and merger.**
-$$
-\kappa_{ij}(t)=1-\langle P_{\mathrm{dec},t}^{(i)},P_{\mathrm{dec},t}^{(j)}\rangle.
-$$
+$$\kappa_{ij}(t)=1-\langle P_{\mathrm{dec},t}^{(i)},P_{\mathrm{dec},t}^{(j)}\rangle$$
 High $\kappa_{ij}$ = **incompatible policies**. Merger if $J_{ij}>\theta_J$ and $\kappa_{ij}<\theta_\kappa$ for a dwell time $\Delta t$.
 
 **A4. PD loop under multiplicity.**
-$$
-P_{\mathrm{dec},t}\approx\bigoplus_k P_{\mathrm{dec},t}^{(k)} \quad (\text{cross-terms when } J_{ij}\neq 0),
-$$
-$$
-\text{Output}_t \sim \sum_k s_k(t)\,\mathcal{F}\!\left(P_{\mathrm{dec},t}^{(k)}\right).
-$$
+$$P_{\mathrm{dec},t}\approx\bigoplus_k P_{\mathrm{dec},t}^{(k)} \quad (\text{cross-terms when } J_{ij}\neq 0)$$
+
+$$\text{Output}_t \sim \sum_k s_k(t)\,\mathcal{F}\!\left(P_{\mathrm{dec},t}^{(k)}\right)$$
 Behavior is a **salience-weighted mixture** of component decisions.
 
 **A5. Experimental proxies.**
