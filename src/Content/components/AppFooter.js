@@ -1,10 +1,13 @@
 import React from 'react';
 import { Footer } from '../styled.components';
+import { getTranslation } from '../translations';
 
-const AppFooter = () => {
+const AppFooter = ({ language = 'en' }) => {
+  const t = (key) => getTranslation(language, key);
+
   return (
     <Footer>
-      <p>© 2025 Rodrigo Werneck Franco. All rights reserved. MIT License.</p>
+      <p>{t('copyright')}</p>
     </Footer>
   );
 };

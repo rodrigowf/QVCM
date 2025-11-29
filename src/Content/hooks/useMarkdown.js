@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import { marked } from 'marked';
 
-const QVCM_PATH = "./QVCM.md";
+const QVCM_PATHS = {
+  en: './QVCM.md',
+  'pt-BR': './QVCM-pt.md'
+};
 
 const generateTOC = (markdown) => {
   const headingRegex = /^(#{1,6})\s*(.+)$/gm;
@@ -49,7 +52,7 @@ const processHtmlIds = (html) => {
   return doc.body.innerHTML;
 };
 
-const useMarkdown = () => {
+const useMarkdown = (language = 'en') => {
   const [markdownContent, setMarkdownContent] = useState("");
   const [htmlContent, setHtmlContent] = useState("");
   const [toc, setTOC] = useState([]);
@@ -58,8 +61,10 @@ const useMarkdown = () => {
   useEffect(() => {
     const fetchMarkdown = async () => {
       try {
+        setLoading(true);
         const timestamp = new Date().getTime();
-        const response = await fetch(`${QVCM_PATH}?t=${timestamp}`);
+        const filePath = QVCM_PATHS[language] || QVCM_PATHS.en;
+        const response = await fetch(`${filePath}?t=${timestamp}`);
         if (!response.ok) {
           throw new Error(`Failed to load markdown: ${response.status} ${response.statusText}`);
         }
@@ -77,7 +82,7 @@ const useMarkdown = () => {
       }
     };
     fetchMarkdown();
-  }, []);
+  }, [language]);
 
   return { markdownContent, htmlContent, toc, loading };
 };

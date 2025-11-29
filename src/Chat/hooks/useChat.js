@@ -1,14 +1,20 @@
 import { useState } from 'react';
-import { agentPrompts, availableAgents } from '../prompts';
 
-
-export const useChat = (apiKey, messages, setMessages, saveConversation, showSnackbar) => {
+export const useChat = (
+  apiKey,
+  messages,
+  setMessages,
+  saveConversation,
+  showSnackbar,
+  agentPrompts,
+  availableAgents
+) => {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [selectedAgent, setSelectedAgent] = useState('specialist');
 
   const getCurrentAgent = (selectedAgent) =>
-    availableAgents.find((agent) => agent.id === selectedAgent); 
+    (availableAgents || []).find((agent) => agent.id === selectedAgent);
 
 
   const handleSend = async () => {
@@ -27,7 +33,10 @@ export const useChat = (apiKey, messages, setMessages, saveConversation, showSna
     setLoading(true);
 
     try {
-      const systemPrompt = agentPrompts[selectedAgent]?.systemPrompt;
+      const systemPrompt =
+        agentPrompts[selectedAgent]?.systemPrompt ||
+        agentPrompts['specialist']?.systemPrompt ||
+        '';
       
       let chatMessages = [
         { role: "system", content: systemPrompt },

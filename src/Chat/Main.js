@@ -21,7 +21,7 @@ import { useConversations } from './hooks/useConversations';
 import { useChat } from './hooks/useChat';
 import { useVoiceChatWithStorage } from './hooks/useVoiceChatWithStorage';
 import { createAppTheme } from './theme/createAppTheme';
-import { agentPrompts } from './prompts';
+import { getAgentPrompts, getAvailableAgents } from './prompts';
 
 const VOICE_MODE_STORAGE_KEY = 'qhch_voice_mode';
 
@@ -38,6 +38,8 @@ function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey, language, t
   });
 
   const theme = createAppTheme(isDarkMode);
+  const agentPrompts = useMemo(() => getAgentPrompts(language), [language]);
+  const availableAgents = useMemo(() => getAvailableAgents(language), [language]);
 
   const showSnackbar = (message, severity = 'info') => {
     setSnackbarMessage(message);
@@ -70,7 +72,7 @@ function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey, language, t
     handleBackupConversations,
     handleDeleteConversation,
     formatTimestamp,
-  } = useConversations();
+  } = useConversations(availableAgents);
 
   const {
     input,
@@ -80,16 +82,15 @@ function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey, language, t
     setSelectedAgent,
     getCurrentAgent,
     handleSend,
-  } = useChat(apiKey, messages, setMessages, saveConversation, showSnackbar);
+  } = useChat(apiKey, messages, setMessages, saveConversation, showSnackbar, agentPrompts, availableAgents);
 
   // Voice chat integration
-  const systemPrompt = useMemo(
-    () =>
-      selectedAgent
-        ? agentPrompts[selectedAgent]?.systemPrompt
-        : agentPrompts['specialist'].systemPrompt,
-    [selectedAgent]
-  );
+  const systemPrompt = useMemo(() => {
+    const fallback = agentPrompts['specialist']?.systemPrompt || '';
+    return selectedAgent && agentPrompts[selectedAgent]?.systemPrompt
+      ? agentPrompts[selectedAgent].systemPrompt
+      : fallback;
+  }, [agentPrompts, selectedAgent]);
 
   const voice = selectedAgent === 'sage' ? 'ash' : 'shimmer';
 
@@ -152,7 +153,7 @@ function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey, language, t
   const handleAgentChange = (newAgentId) => {
     setSelectedAgent(newAgentId);
     if (isVoiceMode && isConnected) {
-      const newPrompt = agentPrompts[newAgentId].systemPrompt;
+      const newPrompt = agentPrompts[newAgentId]?.systemPrompt;
       updateSystemPrompt(newPrompt).catch((error) => {
         console.error('Failed to update system prompt:', error);
         showSnackbar('Failed to update system prompt', 'error');
@@ -221,6 +222,7 @@ function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey, language, t
           toggleVoiceMode={toggleVoiceMode}
           language={language}
           toggleLanguage={toggleLanguage}
+          availableAgents={availableAgents}
         />
 
         <Box
@@ -253,6 +255,9 @@ function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey, language, t
             handleChangeApiKey={handleChangeApiKey}
             toggleDarkMode={toggleDarkMode}
             theme={theme}
+            language={language}
+            toggleLanguage={toggleLanguage}
+            availableAgents={availableAgents}
           />
 
           <Container

@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { CONVERSATIONS_STORAGE_KEY } from '../constants/storage';
-import { availableAgents } from '../prompts';
 
-export const useConversations = () => {
+export const useConversations = (availableAgents = []) => {
   const [conversations, setConversations] = useState([]);
   const [selectedConversation, setSelectedConversation] = useState(null);
   const [messages, setMessages] = useState([]);

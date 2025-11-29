@@ -7,10 +7,13 @@ import {
   styled,
   useTheme,
   Tooltip,
+  Alert,
+  Typography,
 } from '@mui/material';
 import CallEndIcon from '@mui/icons-material/CallEnd';
 import MicIcon from '@mui/icons-material/Mic';
 import MicOffIcon from '@mui/icons-material/MicOff';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { ChatInputContainer } from '../styled/ChatInput.styled';
 
 // Keyframes for a glowing pulse around the button.
@@ -126,65 +129,134 @@ export const VoiceChatInput = ({
   audioLevel = 0,
   isMuted = false,
   onToggleMute = () => {},
+  error = null,
 }) => {
   const theme = useTheme();
+  const [connectionError, setConnectionError] = React.useState(null);
+
+  // Update connection error when error prop changes
+  React.useEffect(() => {
+    if (error) {
+      setConnectionError(error);
+    }
+  }, [error]);
 
   const handleToggleConnection = async () => {
+    setConnectionError(null); // Clear previous errors
+
     if (isConnected) {
-      await onDisconnect();
+      try {
+        await onDisconnect();
+      } catch (error) {
+        console.error('Failed to disconnect:', error);
+        setConnectionError(error.message || 'Failed to disconnect');
+      }
     } else {
       try {
         await onConnect(apiKey);
+        setConnectionError(null); // Clear error on successful connection
       } catch (error) {
         console.error('Failed to connect:', error);
+        setConnectionError(error.message || 'Failed to connect to voice chat');
       }
     }
   };
 
   return (
     <ChatInputContainer isDarkMode={isDarkMode} theme={theme}>
-      <CenterContainer>
-        <ControlsRow>
-          <VoiceButtonContainer>
-            {isConnected && isSpeaking && !isMuted && (
-              <>
-                <InputLevelRing isDarkMode={isDarkMode} audioLevel={audioLevel} />
-                <GlowRing isDarkMode={isDarkMode} />
-              </>
-            )}
-            <VoiceButton
-              isConnected={isConnected}
-              isDarkMode={isDarkMode}
-              onClick={handleToggleConnection}
-              disabled={!apiKey || loading}
-            >
-              {loading ? (
-                <CircularProgress size={28} color="inherit" />
-              ) : isConnected ? (
-                <CallEndIcon fontSize="large" />
-              ) : (
-                <MicIcon fontSize="large" />
+      <Box sx={{ width: '100%', p: 2 }}>
+        {/* Error Display */}
+        {connectionError && (
+          <Alert
+            severity="error"
+            icon={<ErrorOutlineIcon />}
+            onClose={() => setConnectionError(null)}
+            sx={{
+              mb: 2,
+              backgroundColor: isDarkMode ? 'rgba(211, 47, 47, 0.1)' : undefined,
+              color: isDarkMode ? '#ef5350' : undefined,
+              '& .MuiAlert-icon': {
+                color: isDarkMode ? '#ef5350' : undefined,
+              }
+            }}
+          >
+            <Typography variant="body2">{connectionError}</Typography>
+          </Alert>
+        )}
+
+        {/* No API Key Warning */}
+        {!apiKey && !connectionError && (
+          <Alert
+            severity="warning"
+            sx={{
+              mb: 2,
+              backgroundColor: isDarkMode ? 'rgba(255, 152, 0, 0.1)' : undefined,
+              color: isDarkMode ? '#ffa726' : undefined,
+            }}
+          >
+            <Typography variant="body2">
+              Please set your API key to use voice chat
+            </Typography>
+          </Alert>
+        )}
+
+        <CenterContainer>
+          <ControlsRow>
+            <VoiceButtonContainer>
+              {isConnected && isSpeaking && !isMuted && (
+                <>
+                  <InputLevelRing isDarkMode={isDarkMode} audioLevel={audioLevel} />
+                  <GlowRing isDarkMode={isDarkMode} />
+                </>
               )}
-            </VoiceButton>
-          </VoiceButtonContainer>
-          {isConnected && (
-            <Tooltip title={isMuted ? "Unmute microphone" : "Mute microphone"}>
-              <MuteButton
-                isDarkMode={isDarkMode}
-                isMuted={isMuted}
-                onClick={onToggleMute}
-                disabled={!apiKey || loading}
+              <Tooltip
+                title={
+                  !apiKey
+                    ? 'Set API key to enable voice chat'
+                    : loading
+                    ? 'Connecting...'
+                    : isConnected
+                    ? 'Disconnect from voice chat'
+                    : 'Connect to voice chat'
+                }
               >
-                {isMuted ? (
-                  <MicOffIcon fontSize="medium" />
-                ) : (
-                  <MicIcon fontSize="medium" />
-                )}
-              </MuteButton>
-            </Tooltip>
-          )}
-        </ControlsRow>
-      </CenterContainer>
+                <span>
+                  <VoiceButton
+                    isConnected={isConnected}
+                    isDarkMode={isDarkMode}
+                    onClick={handleToggleConnection}
+                    disabled={!apiKey || loading}
+                  >
+                    {loading ? (
+                      <CircularProgress size={28} color="inherit" />
+                    ) : isConnected ? (
+                      <CallEndIcon fontSize="large" />
+                    ) : (
+                      <MicIcon fontSize="large" />
+                    )}
+                  </VoiceButton>
+                </span>
+              </Tooltip>
+            </VoiceButtonContainer>
+            {isConnected && (
+              <Tooltip title={isMuted ? "Unmute microphone" : "Mute microphone"}>
+                <MuteButton
+                  isDarkMode={isDarkMode}
+                  isMuted={isMuted}
+                  onClick={onToggleMute}
+                  disabled={!apiKey || loading}
+                >
+                  {isMuted ? (
+                    <MicOffIcon fontSize="medium" />
+                  ) : (
+                    <MicIcon fontSize="medium" />
+                  )}
+                </MuteButton>
+              </Tooltip>
+            )}
+          </ControlsRow>
+        </CenterContainer>
+      </Box>
     </ChatInputContainer>
   );
 }; 

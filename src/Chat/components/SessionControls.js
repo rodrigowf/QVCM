@@ -12,7 +12,6 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import TranslateIcon from '@mui/icons-material/Translate';
 import { ControlsContainer, StyledFormControl } from '../styled/AppHeader.styled';
-import { availableAgents } from '../prompts';
 
 export const SessionControls = ({
   isDarkMode,
@@ -25,6 +24,7 @@ export const SessionControls = ({
   toggleDarkMode,
   language,
   toggleLanguage,
+    availableAgents,
 }) => {
     return (
         <ControlsContainer isMobile={isMobile}>
@@ -64,17 +64,19 @@ export const SessionControls = ({
                 <KeyIcon />
             </IconButton>
             </Tooltip>
-            <Tooltip title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}>
-            <IconButton color="inherit" onClick={toggleDarkMode}>
-                {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
-            </IconButton>
-            </Tooltip>
-            <Tooltip title={language === 'en' ? "Mudar para Português" : "Switch to English"}>
-            <IconButton color="inherit" onClick={toggleLanguage} sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                <TranslateIcon sx={{ fontSize: 20 }} />
-                <span style={{ fontSize: '12px', fontWeight: 'bold' }}>{language === 'en' ? 'EN' : 'BR'}</span>
-            </IconButton>
-            </Tooltip>
+                        <span style={{display:'flex', alignItems:'center', gap:'4px'}}>
+                            <Tooltip title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}>
+                                <IconButton color="inherit" onClick={toggleDarkMode}>
+                                        {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+                                </IconButton>
+                            </Tooltip>
+                            <Tooltip title={language === 'en' ? "Mudar para Português" : "Switch to English"}>
+                                <IconButton color="inherit" onClick={toggleLanguage} sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                                        <TranslateIcon sx={{ fontSize: 20 }} />
+                                        <span style={{ fontSize: '12px', fontWeight: 'bold' }}>{language === 'en' ? 'EN' : 'BR'}</span>
+                                </IconButton>
+                            </Tooltip>
+                        </span>
         </ControlsContainer>
     );
 }

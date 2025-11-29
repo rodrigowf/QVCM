@@ -44,6 +44,9 @@ export const ChatDrawer = ({
   handleChangeApiKey,
   toggleDarkMode,
   theme,
+  language,
+  toggleLanguage,
+  availableAgents,
 }) => {
   // State to track which conversation to delete
   const [conversationToDelete, setConversationToDelete] = React.useState(null);
@@ -67,6 +70,9 @@ export const ChatDrawer = ({
             getCurrentAgent={getCurrentAgent}
             handleChangeApiKey={handleChangeApiKey}
             toggleDarkMode={toggleDarkMode}
+            language={language}
+            toggleLanguage={toggleLanguage}
+            availableAgents={availableAgents}
           />
         )}
         <Box sx={{ 

@@ -7,18 +7,20 @@ import useMarkdown from './hooks/useMarkdown';
 import AppHeader from './components/Header';
 import TOC from './components/TOC';
 import AppFooter from './components/AppFooter';
+import { getTranslation } from './translations';
 
 const ContentPage = ({ isDarkMode, toggleDarkMode, isMobile, language, toggleLanguage }) => {
-  const { htmlContent, toc, loading } = useMarkdown();
+  const { htmlContent, toc, loading } = useMarkdown(language);
   const [ isTocVisible, setIsTocVisible ] = useState(!isMobile);
   const contentRef = useRef(null);
+  const t = (key) => getTranslation(language, key);
 
   const toggleTOCVisible = () => {
     setIsTocVisible(prev => !prev);
   }
 
   useEffect(() => {
-    setIsTocVisible(!isMobile); 
+    setIsTocVisible(!isMobile);
   }, [isMobile])
 
   // After content is rendered, render math using KaTeX auto-render if available
@@ -53,9 +55,9 @@ const ContentPage = ({ isDarkMode, toggleDarkMode, isMobile, language, toggleLan
           <TOC toc={toc} isMobile={isMobile} />
         )}
         <Main id="content" ref={contentRef} isMobile={isMobile}>
-          {loading ? <Loading>Loading...</Loading> : <div dangerouslySetInnerHTML={{ __html: htmlContent }} />}
+          {loading ? <Loading>{t('loading')}</Loading> : <div dangerouslySetInnerHTML={{ __html: htmlContent }} />}
         </Main>
-        <AppFooter />
+        <AppFooter language={language} />
       </Container>
     </div>
   );
