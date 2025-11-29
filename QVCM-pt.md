@@ -11,7 +11,7 @@ O QVCM afirma que um **momento consciente** é realizado por um **estado quânti
 
 ---
 
-# Uma Rampa Suave (leia isto primeiro)
+# Leia isto primeiro
 
 ### Como ler este artigo
 
@@ -42,7 +42,7 @@ Um momento consciente é um **estado quântico** que (a) **projeta** o mundo par
 
 ---
 
-## Glossário (rápido, amigável para iniciantes)
+## Glossário
 
 * **Vantage:** a visão interna — o ponto sentido da experiência.
 * **Componente de vantage:** um **centro de experiência** em um momento; pode haver um ou vários simultaneamente.
@@ -59,7 +59,7 @@ Um momento consciente é um **estado quântico** que (a) **projeta** o mundo par
 
 ---
 
-## Primer de Fundamentos: Quântica (sem matemática pesada)
+## Primer de Fundamentos: Quântica
 
 * **Estados quânticos** podem ficar **em superposição**: como um acorde que segura várias notas ao mesmo tempo.
 * **Medida** (ou um mecanismo de colapso) torna o estado **mais específico** — como escolher uma nota para tocar adiante.
@@ -75,7 +75,7 @@ Um momento consciente é um **estado quântico** que (a) **projeta** o mundo par
 
 ---
 
-# O Modelo Completo (com notas para iniciantes)
+# O Modelo Completo
 
 ## 1. Motivação e Escopo
 
@@ -87,7 +87,7 @@ Dois tensionamentos motivam o QVCM:
 
 ---
 
-## 2. Definições e Notação (completas e inequívocas)
+## 2. Definições e Notação
 
 ### Entidades centrais
 
@@ -136,7 +136,7 @@ Um grau de liberdade é **consciente em (t)** se e somente se pertence a **algum
 
 ---
 
-## 3. Postulado Fundamental (reformulado)
+## 3. Postulado Fundamental
 
 Um momento consciente é realizado pelo estado quântico (|\Psi_t\rangle) cuja **estrutura efetiva de acoplamento (G_t)** pode gerar **um ou mais componentes de vantage coativos**. Quando (G_t) é efetivamente conexo (alto (O_t)), a experiência é **fenomenalmente una**; quando (G_t) se particiona (O_t menor), a experiência é **plural** (vantages coexistentes). Amplitude, fase e emaranhamento em (|\Psi_t\rangle) determinam a **estrutura do conteúdo sentido**.
 
@@ -200,7 +200,7 @@ Componentes diferentes podem empurrar **tendências decisórias** distintas. Se 
 
 ---
 
-## 5. Unidade, Multiplicidade e Diálogo Interno — **Explicações estendidas**
+## 5. Unidade, Multiplicidade e Diálogo Interno 
 
 ### 5.1 Unicidade variável (por que a unidade pode mudar)
 
@@ -243,7 +243,7 @@ Uma **fusão** não é desejo; é uma **transição de fase** em (G_t). Se o **a
 
 ---
 
-## 6. Estrutura Temporal e Memória — **Explicações estendidas**
+## 6. Estrutura Temporal e Memória 
 
 A imagem de campo:
 
@@ -265,7 +265,7 @@ G(t_1,t_2)=\langle\Psi|\hat{\phi}(t_1)\hat{\phi}(t_2)|\Psi\rangle.
 
 ---
 
-## 7. Premissa Biológica: Orch-OR (e para que servem os picos) — **Explicações estendidas**
+## 7. Premissa Biológica: Orch-OR (e para que servem os picos) 
 
 ### 7.1 Por que adotar Orch-OR como premissa?
 
@@ -298,7 +298,7 @@ G(t_1,t_2)=\langle\Psi|\hat{\phi}(t_1)\hat{\phi}(t_2)|\Psi\rangle.
 
 ---
 
-## 8. Compatibilidade com Many-Worlds — **Explicações estendidas**
+## 8. Compatibilidade com Many-Worlds 
 
 **Fora vs. dentro.** Many-Worlds (Everett) diz que a função de onda global **nunca colapsa**, apenas **ramifica**. O QVCM diz que **por dentro** cada vantage sente uma **única** reconfiguração (um "colapso") — exatamente o que um ramo **parece** para um observador embutido.
 
@@ -311,7 +311,7 @@ G(t_1,t_2)=\langle\Psi|\hat{\phi}(t_1)\hat{\phi}(t_2)|\Psi\rangle.
 
 ---
 
-## 9. Exemplos Didáticos Mínimos — **Explicações estendidas**
+## 9. Exemplos Didáticos Mínimos 
 
 1. **Partícula única (\Psi(x)).**
 
@@ -330,7 +330,7 @@ G(t_1,t_2)=\langle\Psi|\hat{\phi}(t_1)\hat{\phi}(t_2)|\Psi\rangle.
 
 ---
 
-## 10. Programa Empírico e Previsões — **Explicações estendidas**
+## 10. Programa Empírico e Previsões 
 
 **Ideia-guia.** Queremos **ganhos ou perdas claras** para o QVCM. A seguir, caminhos **práticos** para validação ou refutação.
 
@@ -369,7 +369,7 @@ G(t_1,t_2)=\langle\Psi|\hat{\phi}(t_1)\hat{\phi}(t_2)|\Psi\rangle.
 
 ---
 
-## 11. Ponte Filosofia & Psicologia — **Explicações estendidas**
+## 11. Ponte Filosofia & Psicologia 
 
 **Identidade sem dogma.** O QVCM afirma que o "eu" sentido é a **organização atual** dos componentes de vantage. Às vezes **um**, às vezes **vários**. Isso explica naturalmente:
 
@@ -382,7 +382,7 @@ G(t_1,t_2)=\langle\Psi|\hat{\phi}(t_1)\hat{\phi}(t_2)|\Psi\rangle.
 
 ---
 
-## 12. Limitações e Questões em Aberto — **Explicações estendidas**
+## 12. Limitações e Questões em Aberto 
 
 * **Incerteza de substrato.** A coerência quântica sustentada in vivo é debatida. O QVCM é **explícito**: adota Orch-OR como **premissa de trabalho** e convida a testes decisivos.
 * **Estimar (w_{ij}(t)).** Inferir emaranhamento a partir de sinais clássicos é indireto. Mitigamos via **triangulação** (registros multimodais, perturbação, comportamento).
