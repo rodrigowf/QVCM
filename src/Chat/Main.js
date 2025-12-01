@@ -118,8 +118,9 @@ function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey, language, t
 
   const voice = selectedAgent === 'sage' ? 'ash' : 'shimmer';
 
-  // Only initialize voice chat if supported and enabled
-  const shouldInitVoiceChat = isVoiceMode && isVoiceModeSupported();
+  // Initialize voice chat hook if browser supports it (regardless of whether it's enabled)
+  // This allows the hook to be ready when user enables voice mode
+  const shouldInitVoiceChat = isVoiceModeSupported();
 
   const {
     isConnected,
