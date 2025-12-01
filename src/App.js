@@ -33,6 +33,9 @@ const App = () => {
       const storedChatOpen = localStorage.getItem(CHAT_OPEN_STORAGE_KEY);
       if (storedChatOpen !== null) {
         setChatOpen(storedChatOpen === 'true');
+      } else {
+        // Default to false if no stored value
+        setChatOpen(false);
       }
     }
   }, []);
@@ -48,9 +51,9 @@ const App = () => {
     if (storedDarkMode) {
       setIsDarkMode(storedDarkMode === 'true');
     } else {
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        setIsDarkMode(true);
-      }
+      // Default to system preference or false
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setIsDarkMode(prefersDark || false);
     }
   }, []);
   
@@ -77,7 +80,7 @@ const App = () => {
     setChatOpen(prevState => !prevState);
   };
 
-  if (isMobile === null || isDarkMode === null || isMobile === undefined || isMobile === null) {
+  if (chatOpen === null || isDarkMode === null) {
     return (
       <div style={{
         background: '#161616',

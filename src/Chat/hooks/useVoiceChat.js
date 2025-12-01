@@ -1,7 +1,7 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { WebRTCService } from '../services/webrtcService';
 
-export function useVoiceChat(systemPrompt, voice = 'cove') {
+export function useVoiceChat(systemPrompt, voice = 'cove', shouldInit = true) {
     const [isConnected, setIsConnected] = useState(false);
     const [isSpeaking, setIsSpeaking] = useState(false);
     const [messages, setMessages] = useState([]);
@@ -14,6 +14,7 @@ export function useVoiceChat(systemPrompt, voice = 'cove') {
     const animationFrameRef = useRef(null);
     const mediaStreamRef = useRef(null);
     const connectionTimeoutRef = useRef(null);
+    const isInitializedRef = useRef(shouldInit);
 
     const handleStatusChange = useCallback((status) => {
         setIsConnected(status);
@@ -60,6 +61,11 @@ export function useVoiceChat(systemPrompt, voice = 'cove') {
     }, []);
 
     const setupAudioAnalyser = useCallback((stream) => {
+        // Don't initialize if hook shouldn't init
+        if (!isInitializedRef.current) {
+            return;
+        }
+
         try {
             if (!audioContextRef.current) {
                 // Use fallback for older browsers
@@ -150,6 +156,13 @@ export function useVoiceChat(systemPrompt, voice = 'cove') {
     }, []);
 
     const connect = useCallback(async (apiKey) => {
+        // Don't allow connection if hook wasn't initialized properly
+        if (!isInitializedRef.current) {
+            const error = new Error('Voice chat is not available on this browser');
+            setError(error.message);
+            throw error;
+        }
+
         try {
             setError(null);
 

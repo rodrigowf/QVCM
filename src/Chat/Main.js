@@ -25,6 +25,24 @@ import { getAgentPrompts, getAvailableAgents } from './prompts';
 
 const VOICE_MODE_STORAGE_KEY = 'qhch_voice_mode';
 
+// Check if browser supports voice mode features
+const isVoiceModeSupported = () => {
+  try {
+    // Check for essential WebRTC APIs
+    const hasRTCPeerConnection = !!(window.RTCPeerConnection || window.webkitRTCPeerConnection);
+    const hasGetUserMedia = !!(navigator.mediaDevices?.getUserMedia ||
+                                navigator.getUserMedia ||
+                                navigator.webkitGetUserMedia ||
+                                navigator.mozGetUserMedia);
+    const hasAudioContext = !!(window.AudioContext || window.webkitAudioContext);
+
+    return hasRTCPeerConnection && hasGetUserMedia && hasAudioContext;
+  } catch (error) {
+    console.warn('Error checking voice mode support:', error);
+    return false;
+  }
+};
+
 function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey, language, toggleLanguage }) {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
@@ -33,6 +51,12 @@ function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey, language, t
   const [isSpoken, setIsSpoken] = useState(false);
   const [autoPlayEnabled, setAutoPlayEnabled] = useState(false);
   const [isVoiceMode, setIsVoiceMode] = useState(() => {
+    // Only restore voice mode if browser supports it
+    if (!isVoiceModeSupported()) {
+      // Clear the stored value if browser doesn't support it
+      localStorage.removeItem(VOICE_MODE_STORAGE_KEY);
+      return false;
+    }
     const stored = localStorage.getItem(VOICE_MODE_STORAGE_KEY);
     return stored ? JSON.parse(stored) : false;
   });
@@ -94,6 +118,9 @@ function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey, language, t
 
   const voice = selectedAgent === 'sage' ? 'ash' : 'shimmer';
 
+  // Only initialize voice chat if supported and enabled
+  const shouldInitVoiceChat = isVoiceMode && isVoiceModeSupported();
+
   const {
     isConnected,
     isSpeaking,
@@ -105,7 +132,7 @@ function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey, language, t
     audioLevel,
     isMuted,
     toggleMute,
-  } = useVoiceChatWithStorage(systemPrompt, saveConversation, selectedAgent, voice);
+  } = useVoiceChatWithStorage(systemPrompt, saveConversation, selectedAgent, voice, shouldInitVoiceChat);
 
   // Update messages when voice messages change
   useEffect(() => {
@@ -116,14 +143,28 @@ function Chat({ isDarkMode, toggleDarkMode, isMobile, initialApiKey, language, t
 
   // Handle voice mode toggle
   const toggleVoiceMode = async () => {
-    if (isVoiceMode && isConnected) {
-      await disconnectVoice();
-    } else if (!isVoiceMode) {
-      // Clear messages when switching to voice mode
-      setMessages([]);
+    // Check if voice mode is supported before enabling
+    if (!isVoiceMode && !isVoiceModeSupported()) {
+      showSnackbar(
+        'Voice mode is not supported on this browser. Please use Chrome, Firefox, Safari, or Edge.',
+        'error'
+      );
+      return;
     }
-    setIsVoiceMode((prev) => !prev);
-    localStorage.setItem(VOICE_MODE_STORAGE_KEY, JSON.stringify(!isVoiceMode));
+
+    try {
+      if (isVoiceMode && isConnected) {
+        await disconnectVoice();
+      } else if (!isVoiceMode) {
+        // Clear messages when switching to voice mode
+        setMessages([]);
+      }
+      setIsVoiceMode((prev) => !prev);
+      localStorage.setItem(VOICE_MODE_STORAGE_KEY, JSON.stringify(!isVoiceMode));
+    } catch (error) {
+      console.error('Error toggling voice mode:', error);
+      showSnackbar('Failed to toggle voice mode: ' + (error.message || 'Unknown error'), 'error');
+    }
   };
 
   useEffect(() => {
